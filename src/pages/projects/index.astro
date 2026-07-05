@@ -8,9 +8,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const projects = (await getCollection('projects')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
-for (let i = 0; i < projects.length - 1; i += 2) {
-	[projects[i], projects[i + 1]] = [projects[i + 1], projects[i]];
-}
 
 ---
 
