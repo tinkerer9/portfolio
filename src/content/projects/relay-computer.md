@@ -1,14 +1,14 @@
 ---
-title: Markdown Mystery Tour
-publishDate: 2020-03-02 00:00:00
-img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+title: Relay Computer
+publishDate: 2026-07-04
+img: /assets/relay-computer/pcb.jpg
+img_alt: A green printed circuit board for a relay computer
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  I designed and made a relay computer that adds or subtracts two 4-bit binary numbers from scratch. Practical? No. Fun? Absolutely.
 tags:
   - Design
-  - Dev
-  - User Testing
+  - Electronics
+  - Circuitry
 ---
 
 ## Level-two heading
