@@ -36,8 +36,8 @@ const projects = (await getCollection('projects'))
 						<Pill><Icon icon="toolbox" size="1.33em" /> Creator</Pill>
 					</div>
 
-					<div class="about-me">
-						<a href="/projects">About Me <Icon icon="arrow-right" size="1.2em" /></a>
+					<div class="about-link">
+						<a href="/about/">About Me <Icon icon="arrow-right" size="1.2em" /></a>
 					</div>
 				</Hero>
 
@@ -47,6 +47,13 @@ const projects = (await getCollection('projects'))
 					height="620"
 					src="/assets/portrait.jpg"
 				/>
+
+				<div class="cta about-cta">
+					<CallToAction href="/about/">
+						About Me
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
 			</header>
 
 			<Skills />
@@ -103,21 +110,25 @@ const projects = (await getCollection('projects'))
 		box-shadow: var(--shadow-md);
 	}
 
-	.about-me {
+	.about-cta {
+		width: min(100%, 30rem);
+	}
+
+	.about-link {
 		margin-top: 0.5rem;
-		display: flex;
+		display: none;
 		align-self: center;
 	}
 
-	.about-me a {
+	.about-link a {
 		text-decoration: 1px solid underline transparent;
 		text-underline-offset: 0.25em;
 		transition: text-decoration-color var(--theme-transition);
 		font-size: var(--text-md);
 	}
 
-	.about-me a:hover,
-	.about-me a:focus {
+	.about-link a:hover,
+	.about-link a:focus {
 		text-decoration-color: currentColor;
 	}
 
@@ -141,7 +152,12 @@ const projects = (await getCollection('projects'))
 			object-fit: cover;
 		}
 
-		.about-me {
+		.about-cta {
+			display: none;
+		}
+
+		.about-link {
+			display: flex;
 			align-self: flex-start;
 		}
 	}
