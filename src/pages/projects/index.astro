@@ -6,7 +6,7 @@ import Project from '../../components/Project.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const projects = (await getCollection('projects')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
 ---

@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import { socials } from './Socials';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -9,8 +10,13 @@ const currentYear = new Date().getFullYear();
 		<p>&copy; {currentYear} Max Parisi</p>
 	</div>
 	<p class="socials">
-		<a href="https://github.com/tinkerer9"> GitHub</a>
-		<a href="/sitemap-index.xml"> Sitemap</a>
+		{
+			socials.map(({ href, icon, label }) => (
+				<a href={href}>{label}</a>
+			))
+		}
+		<a href="/rss.xml">Feed</a>
+		<a href="/sitemap-index.xml">Sitemap</a>
 	</p>
 </footer>
 <style>

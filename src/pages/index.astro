@@ -14,7 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Content Fetching: List four most recent projects
 const projects = (await getCollection('projects'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 	.slice(0, 4);
 
 // Full Astro Component Syntax:
@@ -43,6 +43,13 @@ const projects = (await getCollection('projects'))
 					height="620"
 					src="/assets/portrait.jpg"
 				/>
+
+				<div class="cta about">
+					<CallToAction href="/about/">
+						About Me
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
 			</header>
 
 			<Skills />
@@ -90,7 +97,12 @@ const projects = (await getCollection('projects'))
 		display: none;
 	}
 
+	.about {
+		width: min(100%, 30rem);
+	}
+
 	.hero img {
+		width: min(100%, 30rem);
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
 		object-position: top;
@@ -110,6 +122,10 @@ const projects = (await getCollection('projects'))
 			margin-top: 0.5rem;
 			display: flex;
 			gap: 0.5rem;
+		}
+
+		.about {
+			display: none;
 		}
 
 		.hero img {

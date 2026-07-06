@@ -1,6 +1,6 @@
 ---
 title: Flat Golf Tees
-publishDate: 2025-09-17
+date: 2025-09-17
 img: /assets/projects/golf-tees/printing.jpg
 img_alt: A 3D printer printing blue flat golf tees
 description: |

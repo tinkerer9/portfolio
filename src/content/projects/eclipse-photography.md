@@ -1,6 +1,6 @@
 ---
 title: Eclipse Photography
-publishDate: 2024-04-08
+date: 2024-04-08
 img: /assets/projects/eclipse-photography/photo.jpg
 img_alt: A picture of a partial solar eclipse.
 description: |

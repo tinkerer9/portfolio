@@ -1,6 +1,6 @@
 ---
 title: Polestar Armrest Bucket
-publishDate: 2025-03-19
+date: 2025-03-19
 img: /assets/projects/armrest-bucket/colored.jpg
 img_alt: An armrest bucket for a Polestar 3 in colored light
 description: |
