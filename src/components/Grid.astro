@@ -13,14 +13,14 @@ const { variant } = Astro.props;
 <style>
 	.grid {
 		display: grid;
-		grid-auto-rows: 1fr;
 		gap: 1rem;
 		padding: 0;
+		margin: 0;
 		list-style: none;
 	}
 
 	.grid.small {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 1.5rem;
 	}
 
@@ -31,24 +31,24 @@ const { variant } = Astro.props;
 
 	@media (min-width: 50em) {
 		.grid {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: 4rem;
 		}
 
 		.grid.offset {
 			--row-offset: 7.5rem;
 			padding-bottom: var(--row-offset);
+			grid-auto-flow: row dense;
 		}
 
 		/* Stagger the columns. */
 		.grid.offset > :global(:nth-child(odd)) {
-			grid-column: 2;
+			grid-column: 2 / 3;
 		}
 
 		.grid.offset > :global(:nth-child(even)) {
 			transform: translateY(var(--row-offset));
 			grid-column: 1 / 2;
-			grid-row: span 1 / 1;
 		}
 
 		.grid.small {
