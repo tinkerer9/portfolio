@@ -4,7 +4,7 @@ publishDate: 2025-09-17
 img: /assets/projects/golf-tees/printing.jpg
 img_alt: A 3D printer printing blue flat golf tees
 description: |
-  I designed and made a relay computer that adds or subtracts two 4-bit binary numbers from scratch. Practical? No. Fun? Absolutely.
+  I custom-designed and 3D-printed 100 flat golf tees for a friend.
 tags:
   - Design
   - Electronics

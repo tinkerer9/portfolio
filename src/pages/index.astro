@@ -7,7 +7,7 @@ import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
+import Project from '../components/Project.astro';
 import Skills from '../components/Skills.astro';
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -60,7 +60,7 @@ const projects = (await getCollection('projects'))
 						{
 							projects.map((project) => (
 								<li>
-									<PortfolioPreview project={project} />
+									<Project project={project} />
 								</li>
 							))
 						}

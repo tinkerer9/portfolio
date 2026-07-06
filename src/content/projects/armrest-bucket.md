@@ -4,7 +4,7 @@ publishDate: 2025-03-19
 img: /assets/projects/armrest-bucket/colored.jpg
 img_alt: An armrest bucket for a Polestar 3 in colored light
 description: |
-  I designed and made a relay computer that adds or subtracts two 4-bit binary numbers from scratch. Practical? No. Fun? Absolutely.
+  My dad's Polestar 3 center console was too deep, so I designed and 3D-printed a bucket that fit in perfectly.
 tags:
   - Design
   - Electronics
