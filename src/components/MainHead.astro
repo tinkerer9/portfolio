@@ -2,14 +2,11 @@
 import '../styles/global.css';
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
+	title: string;
+	description: string;
 }
 
-const {
-	title = 'Max Parisi: Portfolio',
-	description = 'The portfolio of Max Parisi',
-} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <meta charset="utf-8" />
