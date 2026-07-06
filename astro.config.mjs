@@ -5,8 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: cloudflare(),
+    adapter: cloudflare(),
 
-  site: 'https://maxparisi.me',
-  integrations: [sitemap()]
+    site: 'https://maxparisi.me',
+    integrations: [sitemap()]
 });
