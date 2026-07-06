@@ -6,9 +6,9 @@ img_alt: A 3D printer printing blue flat golf tees
 description: |
   I custom-designed and 3D-printed 100 flat golf tees for a friend.
 tags:
-  - Design
-  - Electronics
-  - Circuitry
+  - 3D Design
+  - 3D Printing
+  - Iteration
 ---
 
 ## Level-two heading
