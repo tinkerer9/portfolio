@@ -16,23 +16,30 @@ const { title, description } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Max Parisi" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<link rel="alternate" type="application/rss+xml" title="Max Parisi's Projects" href={new URL("rss.xml", Astro.site)} />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="sitemap" href="/sitemap-index.xml" />
-<link
-    rel="alternate"
-    type="application/rss+xml"
-    title="Max Parisi's Projects"
-    href={new URL("rss.xml", Astro.site)}
-/>
-<link
-	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
-	rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap" rel="stylesheet" />
+
 <script is:inline>
-	// This code is inlined in the head to make dark mode instant & blocking.
+	const favicon = document.getElementById('favicon');
+
+	if (favicon) {
+		favicon.href = window.matchMedia('(prefers-color-scheme: dark)').matches
+			? '/favicon-dark.svg'
+			: '/favicon-light.svg';
+	}
+
 	const getThemePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
 			return localStorage.getItem('theme');
