@@ -15,7 +15,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/Article">
 	<head>
 		<MainHead title={title} description={description} />
 	</head>

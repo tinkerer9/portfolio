@@ -7,14 +7,21 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const url = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <meta charset="utf-8" />
-<meta name="description" property="og:description" content={description} />
-
 <meta name="viewport" content="width=device-width" />
-<meta name="generator" content={Astro.generator} />
+
 <title>{title}</title>
+<meta name="description" content={description} />
+<meta name="application-name" content={title}>
+
+<meta name="theme-color" content="#7611a6">
+<meta name="color-scheme" content="light dark">
+
+<meta name="generator" content={Astro.generator} />
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -23,9 +30,25 @@ const { title, description } = Astro.props;
 <meta name="apple-mobile-web-app-title" content="Max Parisi" />
 <link rel="manifest" href="/site.webmanifest" />
 
+<meta property="og:url" content={url}>
+<meta property="og:type" content="website">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<!-- <meta property="og:image" content="IMAGE_PATH"> -->
+<!-- <meta property="og:image:alt" content="ALT_DESCRIPTION"> -->
+<meta property="og:site_name" content="Max Parisi">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Max Parisi">
+
+<link rel="author" href="Max Parisi">
+<link rel="publisher" href="Max Parisi">
+<meta itemprop="name" content={title}>
+<meta itemprop="description" content={description}>
+<!-- <meta itemprop="image" content="IMAGE_PATH"> -->
+
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<link rel="alternate" type="application/rss+xml" title="Max Parisi's Projects" href={new URL("rss.xml", Astro.site)} />
+<link rel="alternate" type="application/rss+xml" title="Subscribe to RSS Feed" href="/rss.xml" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,6 +62,9 @@ const { title, description } = Astro.props;
 			? '/favicon-dark.svg'
 			: '/favicon-light.svg';
 	}
+</script>
+
+<script is:inline>
 
 	const getThemePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -57,4 +83,43 @@ const { title, description } = Astro.props;
 		});
 		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 	}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://yourname.com",
+      "name": "Your Name",
+      "jobTitle": "Your Profession (e.g., UX Designer)",
+      "url": "https://yourname.com",
+      "sameAs": [
+        "https://linkedin.com",
+        "https://github.com",
+        "https://dribbble.com"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "knowsAbout": ["Web Design", "UI/UX", "Frontend Development"],
+      "description": "Portfolio of Your Name, showcasing professional work in Your Profession."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yourname.com/#webpage",
+      "url": "https://yourname.com",
+      "name": "Portfolio | Your Name | Profession",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://yourname.com",
+        "name": "YourName Portfolio"
+      },
+      "about": {"@id": "https://yourname.com"},
+      "description": "Welcome to the portfolio of Your Name. View my latest projects, case studies, and creative work."
+    }
+  ]
+}
 </script>
