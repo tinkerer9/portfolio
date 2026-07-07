@@ -46,6 +46,12 @@ const url = new URL(Astro.url.pathname, Astro.site).href;
 <meta property="og:site_name" content="Max Parisi">
 <meta property="og:locale" content="en_US">
 
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content="/assets/portrait.jpg">
+
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <link rel="alternate" type="application/rss+xml" title="Subscribe to RSS Feed" href="/rss.xml" />
@@ -74,18 +80,5 @@ const url = new URL(Astro.url.pathname, Astro.site).href;
 			localStorage.setItem('theme', isDark ? 'dark' : 'light');
 		});
 		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
-</script>
-
-<!-- JSON-LD Schema.org -->
-<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Person",
-		"name": "Max Parisi",
-		"givenName": "Max",
-		"familyName": "Parisi",
-		"url": "https://maxparisi.me",
-		"image": "https://maxparisi.me/assets/portrait.jp"
 	}
 </script>
