@@ -15,6 +15,26 @@ export function getSchema({
 	isHome,
 	isProject
 }: SchemaProps) {
+	const webPage = {
+		"@type": "WebPage",
+		"@id": url,
+		"url": url,
+		"name": title,
+		"description": description,
+		"isPartOf": { "@id": "https://maxparisi.me/#website" },
+		"author": { "@id": "https://maxparisi.me/#person" },
+		...(isProject ? { "mainEntity": { "@id": `${url}#project` } } : {})
+	};
+
+	const project = {
+		"@type": "CreativeWork",
+		"@id": `${url}#project`,
+		"name": title,
+		"description": description,
+		"url": url,
+		"author": { "@id": "https://maxparisi.me/#person" }
+	};
+
 	return {
 		"@context": "https://schema.org",
 		"@graph": [
@@ -27,54 +47,19 @@ export function getSchema({
 				"sameAs": socials.map(({ href }) => href)
 			},
 
-			...(isHome
-				? [
-						{
-							"@type": "WebSite",
-							"@id": "https://maxparisi.me/#website",
-							"url": "https://maxparisi.me",
-							"name": "Max Parisi",
-							"alternateName": "Max Parisi",
-							"inLanguage": "en-US",
-							"publisher": {
-								"@id": "https://maxparisi.me/#person"
-							}
-						}
-					]
-				: []),
+			{
+				"@type": "WebSite",
+				"@id": "https://maxparisi.me/#website",
+				"url": "https://maxparisi.me",
+				"name": "Max Parisi",
+				"alternateName": "Max Parisi",
+				"inLanguage": "en-US",
+				"publisher": { "@id": "https://maxparisi.me/#person" }
+			},
 
-			...(!isHome
-				? [
-						{
-							"@type": "WebPage",
-							"@id": url,
-							"url": url,
-							"name": title,
-							"description": description,
-							"isPartOf": {
-								"@id": "https://maxparisi.me/#website"
-							},
-                            "author": {
-                                "@id": "https://maxparisi.me/#person"
-                            }
-						}
-					]
-				: []),
+			...(!isHome ? [webPage] : []),
 
-			...(isProject
-				? [
-						{
-							"@type": "CreativeWork",
-							"@id": `${url}#project`,
-							"name": title,
-							"description": description,
-							"url": url,
-							"author": {
-								"@id": "https://maxparisi.me/#person"
-							}
-						}
-					]
-				: [])
+			...(isProject ? [project] : [])
 		]
 	};
 }
