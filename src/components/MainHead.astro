@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { socials } from './Socials';
 
 interface Props {
 	title: string;
@@ -9,6 +10,32 @@ interface Props {
 const { title, description } = Astro.props;
 
 const url = new URL(Astro.url.pathname, Astro.site).href;
+
+const schema = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Person",
+			"@id": "https://maxparisi.me/#person",
+			"name": "Max Parisi",
+			"url": "https://maxparisi.me",
+			"image": "https://maxparisi.me/assets/portrait.jpg", // Change to your actual image URL
+			"sameAs": socials.map(({ href }) => href)
+		},
+		{
+			"@type": "WebSite",
+			"@id": "https://maxparisi.me/#website",
+			"url": "https://maxparisi.me",
+			"name": "Max Parisi",
+			"alternateName": "Max Parisi",
+			"publisher": {
+				"@id": "https://maxparisi.me/#person"
+			}
+		}
+	]
+};
+
+const jsonLdString = JSON.stringify(schema);
 ---
 
 <!-- Essential Elements -->
@@ -82,3 +109,6 @@ const url = new URL(Astro.url.pathname, Astro.site).href;
 		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 	}
 </script>
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json" set:html={jsonLdString} />
