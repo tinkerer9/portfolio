@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { socials } from './Socials';
+import { getSchema } from "../utils/schema";
 
 interface Props {
 	title: string;
@@ -10,48 +10,17 @@ interface Props {
 const { title, description } = Astro.props;
 
 const url = new URL(Astro.url.pathname, Astro.site).href;
-const isHome = Astro.url.pathname === "/";
 
-const schema = {
-	"@context": "https://schema.org",
-	"@graph": [
-		{
-			"@type": "Person",
-			"@id": "https://maxparisi.me/#person",
-			"name": "Max Parisi",
-			"url": "https://maxparisi.me",
-			"image": "https://maxparisi.me/assets/portrait.jpg",
-			"sameAs": socials.map(({ href }) => href)
-		},
-		...(isHome
-			? [
-				{
-					"@type": "WebSite",
-					"@id": "https://maxparisi.me/#website",
-					"url": "https://maxparisi.me",
-					"name": "Max Parisi",
-					"alternateName": "Max Parisi",
-					"inLanguage": "en-US",
-					"publisher": { "@id": "https://maxparisi.me/#person" },
-					"logo": {
-						"@type": "ImageObject",
-						"url": "https://maxparisi.me/web-app-manifest-512x512.png"
-					}
-				}
-			]
-			: [
-				{
-					"@type": "WebPage",
-					"@id": url,
-					"url": url,
-					"name": title,
-					"description": description,
-					"isPartOf": { "@id": "https://maxparisi.me/#website" },
-					"about": { "@id": "https://maxparisi.me/#person" }
-				}
-			])
-	]
-};
+const isHome = Astro.url.pathname === "/";
+const isProject = Astro.url.pathname.startsWith("/projects/");
+
+const schema = getSchema({
+	title,
+	description,
+	url,
+	isHome,
+	isProject
+});
 
 const jsonLdString = JSON.stringify(schema);
 ---
