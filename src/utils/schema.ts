@@ -38,10 +38,6 @@ export function getSchema({
 							"inLanguage": "en-US",
 							"publisher": {
 								"@id": "https://maxparisi.me/#person"
-							},
-							"logo": {
-								"@type": "ImageObject",
-								"url": "https://maxparisi.me/web-app-manifest-512x512.png"
 							}
 						}
 					]
@@ -58,9 +54,9 @@ export function getSchema({
 							"isPartOf": {
 								"@id": "https://maxparisi.me/#website"
 							},
-							"mainEntity": {
-								"@id": "https://maxparisi.me/#person"
-							}
+                            "author": {
+                                "@id": "https://maxparisi.me/#person"
+                            }
 						}
 					]
 				: []),
