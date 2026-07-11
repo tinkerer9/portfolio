@@ -12,11 +12,10 @@ const textLinks: { label: string; href: string }[] = [
 
 /** Test if a link is pointing to the current page. */
 const isCurrentPage = (href: string) => {
-	let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
-	if (pathname === '/' && href === '/') return true;
-	if (pathname.at(0) !== '/') pathname = '/' + pathname;
-	if (pathname.at(-1) !== '/') pathname += '/';
-	return pathname === href || (href !== '/' && pathname.startsWith(href));
+	let pathname = Astro.url.pathname;
+	if (import.meta.env.BASE_URL !== '/') pathname = pathname.replace(import.meta.env.BASE_URL, '');
+	if (pathname !== '/' && pathname.endsWith('/')) pathname = pathname.slice(0, -1);
+	return pathname === href || (href !== '/' && pathname.startsWith(href + '/'));
 };
 ---
 
