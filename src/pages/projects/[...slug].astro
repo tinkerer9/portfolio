@@ -25,7 +25,10 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<BaseLayout title={`${entry.data.title} | Max Parisi`} description={entry.data.description}>
+<BaseLayout 
+	title={`${entry.data.title} | Max Parisi`} 
+	description={entry.data.description}
+>
 	<div class="stack gap-20">
 		<div class="stack gap-15">
 			<header>
