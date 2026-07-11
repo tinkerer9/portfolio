@@ -8,5 +8,5 @@ export default defineConfig({
     adapter: cloudflare(),
     site: 'https://maxparisi.me',
     integrations: [ sitemap() ],
-    prefetch: { prefetchAll: true }
+    build: { format: 'file' }
 });
