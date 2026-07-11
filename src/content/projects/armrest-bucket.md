@@ -11,6 +11,8 @@ tags:
   - Solving
 ---
 
+<!-- markdownlint-disable MD001 -->
+
 > Modern problems require modern solutions.
 
 Shortly after my dad got his Polestar 3, an electric car slowly gaining popularity, he asked me to solve its biggest flaw.
