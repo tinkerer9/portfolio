@@ -9,5 +9,6 @@ export default defineConfig({
     site: 'https://maxparisi.me',
     integrations: [ sitemap() ],
     output: 'static',
-    build: { format: 'file' }
+    build: { format: 'file' },
+    trailingSlash: 'never'
 });
