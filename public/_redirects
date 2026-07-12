@@ -17,5 +17,5 @@
 /blog/* https://blog.maxparisi.me/:splat 302
 
 # Email
-/email → mailto:max@maxparisi.me 302
-/contact → mailto:max@maxparisi.me 302
+/email mailto:max@maxparisi.me 302
+/contact mailto:max@maxparisi.me 302
