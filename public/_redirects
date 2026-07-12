@@ -15,3 +15,10 @@
 # Blog
 /blog https://blog.maxparisi.me 302
 /blog/* https://blog.maxparisi.me/:splat 302
+
+# Temporary
+
+
+# Miscellaneous
+/ssss https://drive.google.com/file/d/1944WHBgl3i3AQz2gEMGETK6K5I-2edfg/view?usp=sharing 302
+/generator https://docs.google.com/document/d/1E_ZnOyNQBm-27CrHIv8IMdg62yaKBFc1zo0RPkBBylc/edit?usp=sharing 302
