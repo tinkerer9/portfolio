@@ -11,3 +11,11 @@
 # MakerWorld
 /mw https://makerworld.com/en/@Makermax101 302
 /makerworld https://makerworld.com/en/@Makermax101
+
+# Blog
+/blog https://blog.maxparisi.me
+/blog/* https://blog.maxparisi.me/:splat
+
+# Email
+/email → mailto:max@maxparisi.me
+/contact → mailto:max@maxparisi.me
