@@ -10,12 +10,12 @@
 
 # MakerWorld
 /mw https://makerworld.com/en/@Makermax101 302
-/makerworld https://makerworld.com/en/@Makermax101
+/makerworld https://makerworld.com/en/@Makermax101 302
 
 # Blog
-/blog https://blog.maxparisi.me
-/blog/* https://blog.maxparisi.me/:splat
+/blog https://blog.maxparisi.me 302
+/blog/* https://blog.maxparisi.me/:splat 302
 
 # Email
-/email → mailto:max@maxparisi.me
-/contact → mailto:max@maxparisi.me
+/email → mailto:max@maxparisi.me 302
+/contact → mailto:max@maxparisi.me 302
