@@ -1,1 +1,17 @@
-/gh/*  https://github.com/tinkerer9/:splat  302
+# GitHub
+/gh https://github.com/tinkerer9 302
+/gh/* https://github.com/tinkerer9/:splat 302
+/github https://github.com/tinkerer9 302
+/github/* https://github.com/tinkerer9/:splat 302
+
+# GitHub Repos
+/ck https://github.com/tinkerer9/collabokeys 302
+/collabokeys https://github.com/tinkerer9/collabokeys 302
+
+# MakerWorld
+/mw https://makerworld.com/en/@Makermax101 302
+/makerworld https://makerworld.com/en/@Makermax101 
+
+# Email
+/mw https://makerworld.com/en/@Makermax101 302
+/mw https://makerworld.com/en/@Makermax101 302
