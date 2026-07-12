@@ -26,8 +26,10 @@ const { Content } = await render(entry);
 ---
 
 <BaseLayout 
-	title={`${entry.data.title} | Max Parisi`} 
+	title={`${entry.data.title} | Max Parisi`}
 	description={entry.data.description}
+	image={entry.data.img}
+	imageAlt={entry.data.img_alt}
 >
 	<div class="stack gap-20">
 		<div class="stack gap-15">

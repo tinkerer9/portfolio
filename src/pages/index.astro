@@ -20,8 +20,11 @@ const projects = (await getCollection('projects'))
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<BaseLayout title="Max Parisi" 
+<BaseLayout 
+	title="Max Parisi" 
 	description="Personal portfolio of Max Parisi, a developer and maker creating software, electronics, 3D designs, and engineering projects."
+	image="/assets/portrait.jpg"
+	imageAlt="Portrait of Max Parisi"
 >
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">

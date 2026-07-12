@@ -5,9 +5,13 @@ import { getSchema } from "../utils/schema";
 interface Props {
 	title: string;
 	description: string;
+	image?: string;
+	imageAlt?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, imageAlt } = Astro.props;
+
+const imagePath = image ? new URL(image, Astro.site).href : null;
 
 const url = new URL(Astro.url.pathname, Astro.site).href;
 
@@ -55,16 +59,16 @@ const jsonLdString = JSON.stringify(schema);
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="https://maxparisi.me/assets/portrait.jpg" />
-<meta property="og:image:alt" content="Portrait of Max Parisi" />
 <meta property="og:site_name" content="Max Parisi" />
 <meta property="og:locale" content="en_US" />
+{imagePath && <meta property="og:image" content={imagePath} /> }
+{imageAlt && <meta property="og:image:alt" content={imageAlt} /> }
 
 <!-- Twitter Cards -->
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content={imagePath ? "summary_large_image" : "summary"} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content="https://maxparisi.me/assets/portrait.jpg" />
+{imagePath && <meta name="twitter:image" content={imagePath} /> }
 
 <!-- Sitemap and RSS Feed -->
 <link rel="sitemap" href="/sitemap-index.xml" />
