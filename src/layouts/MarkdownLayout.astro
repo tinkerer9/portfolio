@@ -2,58 +2,55 @@
 import Hero from '../components/Hero.astro';
 import BaseLayout from './BaseLayout.astro';
 
-const {frontmatter} = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout 
+<BaseLayout
 	title={`${frontmatter.title} | Max Parisi`}
 	description={frontmatter.description}
 	image={frontmatter.img}
 	imageAlt={frontmatter.img_alt}
 >
 	<div class="stack gap-20">
-		<div class="stack gap-15">
-			<header>
-				<div class="wrapper stack gap-2">
-					<Hero 
-						title={frontmatter.title}
-						tagline={frontmatter.description}
-					>
-						<img
-							width="1553"
-							height="873"
-							src={frontmatter.img}
-							alt={frontmatter.img_alt}
-						/>
-					</Hero>
-				</div>
-			</header>
-			<main class="wrapper">
-				<div class="stack gap-10 content">
-					<!-- {frontmatter.img && <img src={frontmatter.img} alt={frontmatter.img_alt || ''} />} -->
-					<div class="content">
-						<slot />
-					</div>
-				</div>
-			</main>
-		</div>
+		<main class="wrapper article">
+			<Hero
+				title={frontmatter.title}
+				tagline={frontmatter.description}
+			>
+				{frontmatter.img && (
+					<img
+						width="1553"
+						height="873"
+						src={frontmatter.img}
+						alt={frontmatter.img_alt}
+					/>
+				)}
+			</Hero>
+
+			<div class="content">
+				<slot />
+			</div>
+		</main>
 	</div>
 </BaseLayout>
 
 <style>
-	header {
-		padding-bottom: 2.5rem;
-		border-bottom: 1px solid var(--gray-800);
+	.article {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
 	}
 
-	.description {
-		font-size: var(--text-lg);
-		max-width: 54ch;
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
 	}
 
 	.content {
 		max-width: 65ch;
 		margin-inline: auto;
+		width: 100%;
 	}
 
 	.content > :global(* + *) {
@@ -97,6 +94,22 @@ const {frontmatter} = Astro.props;
 	}
 
 	@media (min-width: 50em) {
+		.article {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+			row-gap: 3.5rem;
+		}
+
+		/* Hero matches About page sizing */
+		.article > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		/* Markdown body centered underneath */
+		.content {
+			grid-column: 2;
+		}
+
 		.content :global(blockquote) {
 			font-size: var(--text-2xl);
 		}
