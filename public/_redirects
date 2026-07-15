@@ -1,3 +1,9 @@
+# Aliases
+/about/sports /about/athletics 302
+
+# Temporary
+
+
 # GitHub
 /gh https://github.com/tinkerer9 302
 /gh/* https://github.com/tinkerer9/:splat 302
@@ -15,9 +21,6 @@
 # Blog
 /blog https://blog.maxparisi.me 302
 /blog/* https://blog.maxparisi.me/:splat 302
-
-# Temporary
-
 
 # Miscellaneous
 /ssss https://drive.google.com/file/d/1944WHBgl3i3AQz2gEMGETK6K5I-2edfg/view?usp=sharing 302

@@ -1,5 +1,5 @@
 # Todo List
 
 - Write about *Relay Computer* and *Flat Golf Tees*
-- Add sports/athetics page
+- Finish `/about/athetics`
 - Add more projects
