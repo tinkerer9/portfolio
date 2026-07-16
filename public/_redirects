@@ -1,15 +1,19 @@
+# Temporary
+
+
 # Aliases
 /about/sports /about/athletics 302
 /athletics /about/athletics 302
 /sports /about/athletics 302
 /latest /projects/latest 302
 
-# Temporary
-
+# Blog
+/blog https://blog.maxparisi.me 302
+/blog/* https://blog.maxparisi.me/:splat 302
 
 # GitHub
 /gh https://github.com/tinkerer9 302
-/gh/:repo https://github.com/tinkerer9/:splat 302
+/gh/* https://github.com/tinkerer9/:splat 302
 /github https://github.com/tinkerer9 302
 /github/* https://github.com/tinkerer9/:splat 302
 
@@ -20,10 +24,6 @@
 # MakerWorld
 /mw https://makerworld.com/en/@Makermax101 302
 /makerworld https://makerworld.com/en/@Makermax101 302
-
-# Blog
-/blog https://blog.maxparisi.me 302
-/blog/* https://blog.maxparisi.me/:splat 302
 
 # Miscellaneous
 /ssss https://drive.google.com/file/d/1944WHBgl3i3AQz2gEMGETK6K5I-2edfg/view?usp=sharing 302
