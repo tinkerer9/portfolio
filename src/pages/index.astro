@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-// Component Imports
 import CallToAction from '../components/CallToAction.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
@@ -8,16 +7,11 @@ import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import Project from '../components/Project.astro';
 import Skills from '../components/Skills.astro';
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Content Fetching: List four most recent projects
 const projects = (await getCollection('projects'))
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 	.slice(0, 4);
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
 ---
 
 <BaseLayout 
