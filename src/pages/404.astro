@@ -8,7 +8,9 @@ import { getCollection } from 'astro:content';
 const pages = [
 	{ path: '/', title: 'Max Parisi', tags: [ 'home', 'root' ] },
 	{ path: '/projects', title: 'My Projects', tags: [] },
-	{ path: '/about', title: 'About Me', tags: [ 'max', 'learn', 'who' ] }
+	/* each project is automatically added */
+	{ path: '/about', title: 'About Me', tags: [ 'max', 'learn', 'who' ] },
+	{ path: '/about/athletics', title: 'Athletics', tags: [ 'sports', 'ski', 'bike', 'run' ] }
 ];
 
 const projects = await getCollection('projects');
