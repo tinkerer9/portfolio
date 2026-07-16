@@ -1,1 +1,1 @@
-Sitemap: https://yourdomain.com
+Sitemap: https://maxparisi.me/sitemap-index.xml
