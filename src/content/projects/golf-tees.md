@@ -13,25 +13,71 @@ tags:
 
 <!-- markdownlint-disable MD001 -->
 
-## Level-two heading
+> Hi Max.
+> Can you make me some Flat Tees with your 3D printer?
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+**August 30, 2025**.
+That's when I got this text from my friend's dad.
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+### Context
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+Okay, that message might not give you much information.
 
-### Level-three heading
+Earlier, he showed me the [Flat-Tee](https://flat-tee.com/), a *"Flat Out Better Tee."*
+It's usually used on driving range mats, where traditional tees won't work.
 
-Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
+To be honest, maybe he should have just bought the original Flat-Tees instead of my custom-made version.
 
-### Level-three heading
+*To set the record straight, I did **not** make any money on this design and only used them for my own personal use.*
+***Please don't sue me!***
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+Back to the story&mdash;I started my first revision.
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+### Revision 1
 
-#### Level-four heading
+I opened the software I use for 3D design is [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/overview), and created a new file: `flat-tees.f3d`.
+With one of the original Flat-Tees for reference, I meticulously measured each and every dimension.
 
-- We noted this
-- And also this other point
+![A sphere cut out of a 3D model](/assets/projects/golf-tees/rev1-rough.jpg)
+
+I first extruded a circle as the base with a shape that looked like a mix between a star and the center-of-mass symbol.
+Then I sketched a sphere the size of a golf ball and revolved it to cut out a space where the ball would sit.
+
+That was basically it&mdash;I rounded edges and added text on the bottom&mdash;and I was finished!
+
+After only a half-hour of printing, my model turned from an image on a screen to an object in my hands.
+I grabbed a random golf ball from the garage and put it on the tee.
+
+![Two golf balls on flat golf tees](/assets/projects/golf-tees/v1.jpg)
+
+I texted my friend's dad a picture of my creation:
+
+*"Amazing! Can you make the part that sticks up a little angled so it will break less?*
+*You want to pegs to slant from the bottom into the center like a pyramid&mdash;you want that impact of the club to be reduced by the slant.*
+*Also the center can be lower and the pegs can be a little closer together so the ball is resting on the pegs."*
+
+I agreed&mdash;this was called "Revison 1" for a reason.
+It was time to try again.
+
+### Revision 2
+
+Instead of using the same model for my changes, I decided to start from scratch.
+
+I created a cross-section sketch, with the circular disc, slanted pegs, and cut-out for the ball.
+
+![A side-view of Revision 2](/assets/projects/golf-tees/rev2-side.jpg)
+
+There wasn't much else to it&mdash;I added a shallow chamfer to the edge of the edge, added the same text, and rounded edges.
+
+![The final golf tees being printed](/assets/projects/golf-tees/timelapse.jpg)
+
+The Flat Golf Tees were finished!
+I printed as many as would fit on my build plate, of course taking a timelapse, and waited until the next morning to see them in all their glory.
+
+My friend's dad asked for **110 golf tees total** for a competition at a local golf course&mdash;55 for *Team USA* and 55 for *Team Europe*.
+
+![110 flat golf tees laid out on a table](/assets/projects/golf-tees/all.jpg)
+
+### Reflection
+
+This project taught me a lot&mdash;from how to design and manufacture custom parts for a "client," how to iterate through multiple prototypes, and how to (legally) infringe on a inventor's product.
