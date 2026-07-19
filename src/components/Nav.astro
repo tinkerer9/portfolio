@@ -2,6 +2,7 @@
 import Icon from './Icon.astro';
 import { socials } from '../utils/socials';
 import ThemeToggle from './ThemeToggle.astro';
+import EasterEgg from './EasterEgg.astro';
 
 const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
@@ -20,7 +21,9 @@ const isCurrentPage = (href: string) => {
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
-			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
+			<EasterEgg>
+				<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
+			</EasterEgg>
 			Max Parisi
 		</a>
 		<menu-button>

@@ -1,0 +1,72 @@
+---
+const {
+	duration = 1000,
+	rotation = 360,
+} = Astro.props;
+---
+
+<div
+	class="konami-container"
+	data-duration={duration}
+	data-rotation={rotation}
+>
+	<slot />
+</div>
+
+<script>
+	const container = document.querySelector<HTMLElement>('.konami-container');
+
+	const KONAMI = [
+		'ArrowUp',
+		'ArrowUp',
+		'ArrowDown',
+		'ArrowDown',
+		'ArrowLeft',
+		'ArrowRight',
+		'ArrowLeft',
+		'ArrowRight',
+		'b',
+		'a',
+	];
+
+	let position = 0;
+
+	document.addEventListener('keydown', (e) => {
+		const key = e.key;
+
+		if (
+			key === KONAMI[position] ||
+			key.toLowerCase() === KONAMI[position]
+		) {
+			position++;
+
+			if (position === KONAMI.length) {
+				position = 0;
+
+				const rotation = container?.dataset.rotation ?? '360'; // as string
+				const duration = Number(container?.dataset.duration ?? 1000); // as number
+
+				container?.animate(
+					[
+						{ transform: 'rotate(0deg)' },
+						{ transform: `rotate(${rotation}deg)` }
+					],
+					{
+						duration,
+						easing: 'ease-in-out',
+					}
+				);
+			}
+		} else {
+			position =
+				key === KONAMI[0] ? 1 : 0;
+		}
+	});
+</script>
+
+<style>
+	.konami-container {
+		display: inline-block;
+		transform-origin: center;
+	}
+</style>
