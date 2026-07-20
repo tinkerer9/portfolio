@@ -102,3 +102,31 @@ const jsonLdString = JSON.stringify(schema);
 
 <!-- JSON-LD Schema -->
 <script type="application/ld+json" set:html={jsonLdString} />
+
+<!-- Console Easter Egg -->
+<script>
+const styles = getComputedStyle(document.documentElement);
+
+const brand = styles.getPropertyValue('--font-brand').trim();
+const body = styles.getPropertyValue('--font-body').trim();
+
+console.log(
+	[
+		"%c👋 Hey there!%c",
+		"",
+		"Looks like you've found the console.",
+		"",
+		"Most people see my portfolio...",
+		"but you took a look under the hood.",
+		"",
+		"Interested to see how it works?",
+		"Check out the source code at",
+		"https://maxparisi.me/gh/portfolio",
+		"",
+		"Have fun!",
+		"Max"
+	].join('\n'),
+	`font-size: 24px; font-family: ${brand}; font-weight: 500;`,
+	`font-size: 16px; font-family: ${body};`
+);
+</script>
