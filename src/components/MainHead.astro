@@ -80,7 +80,7 @@ const jsonLdString = JSON.stringify(schema);
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap" rel="stylesheet" />
 
 <!-- Theme Preferences -->
-<script is:inline>
+<script is:inline> // is:inline so this runs ASAP (otherwise there will be an initial "flicker")
 	const getThemePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
 			return localStorage.getItem('theme');

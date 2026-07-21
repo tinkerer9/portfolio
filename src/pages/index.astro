@@ -7,6 +7,7 @@ import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import Project from '../components/Project.astro';
 import Skills from '../components/Skills.astro';
+import MoreLink from '../components/MoreLink.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const projects = (await getCollection('projects'))
@@ -34,8 +35,12 @@ const projects = (await getCollection('projects'))
 						<Pill><Icon icon="toolbox" size="1.33em" /> Creator</Pill>
 					</div>
 
-					<div class="about-link">
+					<!-- <div class="about-link">
 						<a href="/about/">About Me <Icon icon="arrow-right" size="1.2em" /></a>
+					</div> -->
+
+					<div class="about-link">
+						<MoreLink href="/about">About Me</MoreLink>
 					</div>
 				</Hero>
 
@@ -61,7 +66,7 @@ const projects = (await getCollection('projects'))
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Recent Projects</h3>
-					<p>Take a look below at some of my featured projects from the past few years.</p>
+					<p>Take a look below at some of my projects from the past few years.</p>
 				</header>
 
 				<div class="gallery">
@@ -113,21 +118,8 @@ const projects = (await getCollection('projects'))
 	}
 
 	.about-link {
-		margin-top: 0.5rem;
 		display: none;
-		align-self: center;
-	}
-
-	.about-link a {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
 		font-size: var(--text-md);
-	}
-
-	.about-link a:hover,
-	.about-link a:focus {
-		text-decoration-color: currentColor;
 	}
 
 	@media (min-width: 50em) {

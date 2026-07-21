@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+import { iconPaths } from '../utils/icons';
+
+interface Props {
+	href: string;
+    icon?: keyof typeof iconPaths;
+}
+
+const { href, icon = "arrow-right" } = Astro.props;
+---
+
+<div class="more-link">
+    <a href={href}><slot /> <Icon icon={icon} size="1.2em" /></a>
+</div>
+
+<style>
+    .more-link {
+		margin-top: 0.5rem;
+	}
+
+	.more-link a {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.more-link a:hover,
+	.more-link a:focus {
+		text-decoration-color: currentColor;
+	}
+</style>
