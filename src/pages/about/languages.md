@@ -27,7 +27,7 @@ I have some experience in these languages but wouldn't consider myself *"fluent"
 I don't know much about these languages but want to:
 
 - **SQL:** the standard way to interact with large databases
-- **C:** best for low-level hardware control (I've [used this once](/github/CollaboKeys/blob/main/src/emulate/helper.c))
+- **C:** best for low-level hardware control (I've [used this once](/github/CollaboKeys/blob/main/src/emulate/helper.c?plain=1))
 - **C++:** common for game development; Arduino is built on this
 
 ### Honorable Mentions
@@ -35,8 +35,8 @@ I don't know much about these languages but want to:
 I wouldn't call these *programming languages*, but I'm still *"fluent"* in them:
 
 - **Scratch:** my first experience in (block-based) coding
-- **Markdown:** basic text formatting; [this page](/github/portfolio/blob/main/src/pages/about/languages.md) is programmed in Markdown
-- **Node.JS:** technically an *enviroment*, but used for many of my [backend programs](/github/CollaboKeys/blob/main/src/server.js)
+- **Markdown:** basic text formatting; [this page](/github/portfolio/blob/main/src/pages/about/languages.md?plain=1) is programmed in Markdown
+- **Node.JS:** technically an *enviroment*, but used for many of my [backend programs](/github/CollaboKeys/blob/main/src/server.js?plain=1)
 - **JSON & YAML:** both data formats for configurations and API responses
 - **Math:** even less of a programming language, but a fundamental for coding
 
