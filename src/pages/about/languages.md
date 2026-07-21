@@ -36,7 +36,7 @@ I wouldn't call these *programming languages*, but I'm still *"fluent"* in them:
 
 - **Scratch:** my first experience in (block-based) coding
 - **Markdown:** basic text formatting; [this page](/github/portfolio/blob/main/src/pages/about/languages.md?plain=1) is programmed in Markdown
-- **Node.JS:** technically an *enviroment*, but used for many of my [backend programs](/github/CollaboKeys/blob/main/src/server.js?plain=1)
+- **Node.js:** technically an *enviroment*, but used for many of my [backend programs](/github/CollaboKeys/blob/main/src/server.js?plain=1)
 - **JSON & YAML:** both data formats for configurations and API responses
 - **Math:** even less of a programming language, but a fundamental for coding
 
