@@ -27,7 +27,7 @@ I have some experience in these languages but wouldn't consider myself *"fluent"
 I don't know much about these languages but want to:
 
 - **SQL:** the standard way to interact with large databases
-- **C:** best for low-level hardware control (I've [used this once](/github/CollaboKeys/blob/main/src/emulate/helper.c?plain=1))
+- **C:** best for low-level hardware control (I've [used this once](/github/CollaboKeys/blob/main/src/emulate/helper.c))
 - **C++:** common for game development; Arduino is built on this
 
 ### Honorable Mentions
