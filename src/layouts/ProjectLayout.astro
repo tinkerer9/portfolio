@@ -92,6 +92,10 @@ const { entry } = Astro.props;
 		margin: 1.5rem 0;
 	}
 
+	.content :global(small) {
+		font-size: var(--text-xs);
+	}
+
 	.content :global(img) {
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);

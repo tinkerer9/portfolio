@@ -11,7 +11,10 @@ const pages = [
 	/* each project is automatically added */
 	{ path: '/about', title: 'About Me' },
 	{ path: '/about/athletics', title: 'Athletics', tags: [ 'sports' ] },
-	{ path: '/about/languages', title: 'Languages' }
+	{ path: '/about/languages', title: 'Languages' },
+	{ path: '/gear', title: 'Gear', tags: [ 'equipment' ] },
+	{ path: '/gear/camera', title: 'Camera Gear' },
+	{ path: '/gear/printing', title: '3D Printing Gear', tags: [ '3d' ] }
 ];
 
 const projects = await getCollection('projects');
