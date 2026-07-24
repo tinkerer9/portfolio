@@ -38,6 +38,7 @@ const jsonLdString = JSON.stringify(schema);
 <meta name="description" content={description} />
 <meta name="application-name" content="Max Parisi" />
 <meta name="author" content="Max Parisi" />
+<link rel="canonical" href={url} />
 
 <!-- Theme Color -->
 <meta name="theme-color" content="#7611a6" />
@@ -105,28 +106,28 @@ const jsonLdString = JSON.stringify(schema);
 
 <!-- Console Easter Egg -->
 <script>
-const styles = getComputedStyle(document.documentElement);
+	const styles = getComputedStyle(document.documentElement);
 
-const brand = styles.getPropertyValue('--font-brand').trim();
-const body = styles.getPropertyValue('--font-body').trim();
+	const brand = styles.getPropertyValue('--font-brand').trim();
+	const body = styles.getPropertyValue('--font-body').trim();
 
-console.log(
-	[
-		"%c👋 Hey there!%c",
-		"",
-		"Looks like you've found the console.",
-		"",
-		"Most people see my portfolio...",
-		"but you took a look under the hood.",
-		"",
-		"Interested to see how it works?",
-		"Check out the source code at",
-		"https://maxparisi.me/gh/portfolio",
-		"",
-		"Have fun!",
-		"Max"
-	].join('\n'),
-	`font-size: 24px; font-family: ${brand}; font-weight: 500;`,
-	`font-size: 16px; font-family: ${body};`
-);
+	console.log(
+		[
+			"%c👋 Hey there!%c",
+			"",
+			"Looks like you've found the console.",
+			"",
+			"Most people see my portfolio...",
+			"but you took a look under the hood.",
+			"",
+			"Interested to see how it works?",
+			"Check out the source code at",
+			"https://maxparisi.me/gh/portfolio",
+			"",
+			"Have fun!",
+			"Max"
+		].join('\n'),
+		`font-size: 24px; font-family: ${brand}; font-weight: 500;`,
+		`font-size: 16px; font-family: ${body};`
+	);
 </script>
