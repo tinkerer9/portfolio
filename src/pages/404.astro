@@ -3,40 +3,40 @@ Astro.response.status = 404;
 
 import Hero from '../components/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+// import { getCollection } from 'astro:content';
 
-const pages = [
-	{ path: '/', title: 'Max Parisi', tags: [ 'home' ] },
-	{ path: '/projects', title: 'My Projects' },
-	/* each project is automatically added */
-	{ path: '/about', title: 'About Me' },
-	{ path: '/about/athletics', title: 'Athletics', tags: [ 'sports' ] },
-	{ path: '/about/languages', title: 'Languages' },
-	{ path: '/gear', title: 'Gear', tags: [ 'equipment' ] },
-	{ path: '/gear/camera', title: 'Camera Gear' },
-	{ path: '/gear/printing', title: '3D Printing Gear', tags: [ '3d' ] }
-];
+// const pages = [
+// 	{ path: '/', title: 'Max Parisi', tags: [ 'home' ] },
+// 	{ path: '/projects', title: 'My Projects' },
+// 	/* each project is automatically added */
+// 	{ path: '/about', title: 'About Me' },
+// 	{ path: '/about/athletics', title: 'Athletics', tags: [ 'sports' ] },
+// 	{ path: '/about/languages', title: 'Languages' },
+// 	{ path: '/gear', title: 'Gear', tags: [ 'equipment' ] },
+// 	{ path: '/gear/camera', title: 'Camera Gear' },
+// 	{ path: '/gear/printing', title: '3D Printing Gear', tags: [ '3d' ] }
+// ];
 
-const projects = await getCollection('projects');
+// const projects = await getCollection('projects');
 
-pages.push(
-	...projects.map((project) => ({
-		path: `/projects/${project.id}`,
-		title: project.data.title,
-		description: project.data.description,
-		tags: project.data.tags
-	}))
-);
+// pages.push(
+// 	...projects.map((project) => ({
+// 		path: `/projects/${project.id}`,
+// 		title: project.data.title,
+// 		description: project.data.description,
+// 		tags: project.data.tags
+// 	}))
+// );
 ---
 
 <BaseLayout title="404 | Max Parisi" description="404: Page not found">
 	<Hero title="404" tagline="Page Not Found">
-		<div class="suggestion-container" data-pages={JSON.stringify(pages)} hidden>
+		<!-- <div class="suggestion-container" data-pages={JSON.stringify(pages)} hidden>
 			<p>Were you looking for <a id="suggestion"></a>?</p>
-		</div>
+		</div> -->
 	</Hero>
 
-	<script>
+	<!-- <script>
 		import Fuse from 'fuse.js';
 
 		const suggestion = document.querySelector<HTMLAnchorElement>('#suggestion');
@@ -74,10 +74,10 @@ pages.push(
 			suggestion.href = match.item.path;
 			container.hidden = false;
 		}
-	</script>
+	</script> -->
 </BaseLayout>
 
-<style>
+<!-- <style>
 	.suggestion-container {
 		margin-top: 0.5rem;
 		align-self: center;
@@ -94,4 +94,4 @@ pages.push(
 	.suggestion-container a:focus {
 		text-decoration-color: currentColor;
 	}
-</style>
+</style> -->
