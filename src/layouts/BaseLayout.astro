@@ -8,14 +8,15 @@ interface Props {
 	description: string;
 	image?: string;
 	imageAlt?: string;
+	markdown?: URL;
 }
 
-const { title, description, image, imageAlt } = Astro.props;
+const { title, description, image, imageAlt, markdown } = Astro.props;
 ---
 
 <html lang="en" itemscope itemtype="https://schema.org/Article">
 	<head>
-		<MainHead title={title} description={description} image={image} imageAlt={imageAlt} />
+		<MainHead title={title} description={description} image={image} imageAlt={imageAlt}, markdown={markdown} />
 	</head>
 	<body>
 		<div class="stack backgrounds">

@@ -3,7 +3,7 @@ title: Eclipse Photography
 date: 2024-04-08
 img: /assets/projects/eclipse-photography/photo.jpg
 img_alt: A picture of a partial solar eclipse.
-description: |
+description: >-
   Holding a phone to eclipse glasses didn't cut it, so I went up to my roof with a professional camera to do it right.
 tags:
   - Photography

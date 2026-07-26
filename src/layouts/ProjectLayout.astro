@@ -11,6 +11,8 @@ interface Props {
 }
 
 const { entry } = Astro.props;
+
+const markdown = new URL(`${Astro.url.pathname}.md`, Astro.url);
 ---
 
 <BaseLayout 
@@ -18,6 +20,7 @@ const { entry } = Astro.props;
 	description={entry.data.description}
 	image={entry.data.img}
 	imageAlt={entry.data.img_alt}
+	markdown={markdown}
 >
 	<div class="stack gap-20">
 		<div class="stack gap-15">

@@ -7,9 +7,10 @@ interface Props {
 	description: string;
 	image?: string;
 	imageAlt?: string;
+	markdown?: URL;
 }
 
-const { title, description, image, imageAlt } = Astro.props;
+const { title, description, image, imageAlt, markdown } = Astro.props;
 
 const imagePath = image ? new URL(image, Astro.site).href : null;
 
@@ -40,13 +41,6 @@ const jsonLdString = JSON.stringify(schema);
 <meta name="author" content="Max Parisi" />
 <link rel="canonical" href={url} />
 
-<!-- Theme Color -->
-<meta name="theme-color" content="#7611a6" />
-<meta name="color-scheme" content="light dark" />
-
-<!-- Software Attribution -->
-<meta name="generator" content={Astro.generator} />
-
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -54,6 +48,13 @@ const jsonLdString = JSON.stringify(schema);
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="Max Parisi" />
 <link rel="manifest" href="/site.webmanifest" />
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#7611a6" />
+<meta name="color-scheme" content="light dark" />
+
+<!-- Software Attribution -->
+<meta name="generator" content={Astro.generator} />
 
 <!-- OpenGraph Metadata -->
 <meta property="og:url" content={url} />
@@ -74,6 +75,7 @@ const jsonLdString = JSON.stringify(schema);
 <!-- Sitemap and RSS Feed -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title="Subscribe to RSS Feed" href="/rss.xml" />
+{markdown && <link rel="alternate" type="text/markdown" title="LLM-friendly version" href={markdown} /> }
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
