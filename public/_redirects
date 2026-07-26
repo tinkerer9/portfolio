@@ -3,6 +3,7 @@
 
 # Aliases
 /home / 302
+/sitemap.xml /sitemap-index.xml
 /latest /projects/latest 302
 /athletics /about/athletics 302
 /languages /about/languages 302
