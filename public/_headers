@@ -1,0 +1,5 @@
+/fonts/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/backgrounds/*
+  Cache-Control: public, max-age=31536000, immutable
