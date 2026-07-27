@@ -5,7 +5,18 @@ import { getCollection } from 'astro:content';
 
 Astro.response.status = 404;
 
-const staticPages = [
+function normalize(path: string) {
+	try { // decodeURIComponent could throw an error
+		path = decodeURIComponent(path);
+	} catch {}
+
+	return path
+		.toLowerCase()
+		.replace(/\/+/g, '/')
+		.replace(/\/$/, '') || '/';
+}
+
+const staticPages = [ // the Levenshtein algorithm only searches the path
 	{ path: '/', title: 'Home' },
 	{ path: '/projects', title: 'Projects' },
 	{ path: '/about', title: 'About Me' },
@@ -26,7 +37,7 @@ const pages = [
 	}))
 ].map((page) => ({
 	...page,
-	normalized: page.path.toLowerCase()
+	normalized: normalize(page.path)
 }));
 ---
 
@@ -43,14 +54,14 @@ const pages = [
 	const link = document.querySelector('#link');
 
 	function normalize(path) {
-		try {
-			return decodeURIComponent(path)
-				.toLowerCase()
-				.replace(/\/+/g, '/')
-				.replace(/\/$/, '') || '/';
-		} catch {
-			return path.toLowerCase();
-		}
+		try { // decodeURIComponent could throw an error
+			path = decodeURIComponent(path);
+		} catch {}
+
+		return path
+			.toLowerCase()
+			.replace(/\/+/g, '/')
+			.replace(/\/$/, '') || '/';
 	}
 
 	function levenshtein(a, b) {
@@ -75,14 +86,10 @@ const pages = [
 
 		return row[b.length];
 	}
-
-	function scorePath(targetPath, queryPath) {
-		const target = normalize(targetPath);
-		const input = normalize(queryPath);
-
+	
+	function scorePath(target, input) {
 		let score = levenshtein(input, target);
 
-		// Ignore extra parent directories in the target
 		const targetParts = target.split('/').filter(Boolean);
 		const inputParts = input.split('/').filter(Boolean);
 
@@ -101,7 +108,7 @@ const pages = [
 		return score;
 	}
 
-	const currentPath = window.location.pathname;
+	const currentPath = normalize(window.location.pathname);
 
 	const suggestion = pages.reduce((best, page) => {
 		const score = scorePath(page.normalized, currentPath);
