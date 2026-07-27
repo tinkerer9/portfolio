@@ -8,10 +8,11 @@ interface Props {
 	description: string;
 	image?: string;
 	imageAlt?: string;
+	noindex?: boolean;
 	markdown?: URL;
 }
 
-const { title, description, image, imageAlt, markdown } = Astro.props;
+const { title, description, image, imageAlt, noindex, markdown } = Astro.props;
 ---
 
 <html lang="en" itemscope itemtype="https://schema.org/Article">
@@ -21,6 +22,7 @@ const { title, description, image, imageAlt, markdown } = Astro.props;
 			description={description}
 			image={image}
 			imageAlt={imageAlt}
+			noindex={noindex}
 			markdown={markdown}
 		/>
 	</head>
