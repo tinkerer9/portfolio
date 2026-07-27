@@ -53,4 +53,11 @@ const { href } = Astro.props;
 			font-size: var(--text-xl);
 		}
 	}
+
+	@media print {
+		a {
+			-webkit-print-color-adjust: exact !important;
+			print-color-adjust: exact !important;
+		}
+	}
 </style>

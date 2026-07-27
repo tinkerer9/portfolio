@@ -342,4 +342,16 @@ const isCurrentPage = (href: string) => {
 			color: SelectedItem;
 		}
 	}
+
+	@media print {
+		.menu-button,
+		.theme-toggle {
+			display: none;
+		}
+
+		.link {
+			-webkit-print-color-adjust: exact !important;
+			print-color-adjust: exact !important;
+		}
+	}
 </style>

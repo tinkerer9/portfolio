@@ -72,24 +72,24 @@ import Icon from './Icon.astro';
 		constructor() {
 			super();
 
+			const documentElement = document.documentElement;
 			const button = this.querySelector('button')!;
+
+			const isDark = () => documentElement.classList.contains('theme-dark');
 
 			/** Set the theme to dark/light mode. */
 			const setTheme = (dark: boolean) => {
-				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
+				documentElement.classList.toggle('theme-dark', dark);
 				button.setAttribute('aria-pressed', String(dark));
 			};
 
 			// Toggle the theme when a user clicks the button.
-			button.addEventListener('click', () => setTheme(!this.isDark()));
+			button.addEventListener('click', () => setTheme(!isDark()));
 
 			// Initialize button state to reflect current theme.
-			setTheme(this.isDark());
-		}
-
-		isDark() {
-			return document.documentElement.classList.contains('theme-dark');
+			setTheme(isDark());
 		}
 	}
+
 	customElements.define('theme-toggle', ThemeToggle);
 </script>

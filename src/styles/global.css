@@ -171,6 +171,13 @@ body {
 	overflow-x: hidden;
 }
 
+html.printing *,
+html.printing *::before,
+html.printing *::after {
+	transition: none !important;
+	animation: none !important;
+}
+
 body {
 	background-color: var(--gray-999);
 	color: var(--gray-200);
