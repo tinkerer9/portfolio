@@ -7,19 +7,19 @@ import Pill from '../components/Pill.astro';
 import BaseLayout from './BaseLayout.astro';
 
 interface Props {
-	entry: CollectionEntry<'projects'>;
+	project: CollectionEntry<'projects'>;
 }
 
-const { entry } = Astro.props;
+const { project } = Astro.props;
 
 const markdown = new URL(`${Astro.url.pathname}.md`, Astro.url);
 ---
 
 <BaseLayout 
-	title={`${entry.data.title} | Max Parisi`}
-	description={entry.data.description}
-	image={entry.data.img}
-	imageAlt={entry.data.img_alt}
+	title={`${project.data.title} | Max Parisi`}
+	description={project.data.description}
+	image={project.data.img}
+	imageAlt={project.data.img_alt}
 	markdown={markdown}
 >
 	<div class="stack gap-20">
@@ -27,19 +27,19 @@ const markdown = new URL(`${Astro.url.pathname}.md`, Astro.url);
 			<header>
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/projects"><Icon icon="arrow-left" /> Projects</a>
-					<Hero title={entry.data.title} align="start">
+					<Hero title={project.data.title} align="start">
 						<div class="details">
 							<div class="tags">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+								{project.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							<p class="description">{entry.data.description}</p>
+							<p class="description">{project.data.description}</p>
 						</div>
 					</Hero>
 				</div>
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					<img src={project.data.img} alt={project.data.img_alt || ''} />
 					<div class="content">
 						<slot />
 					</div>
