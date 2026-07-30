@@ -1,11 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
     adapter: cloudflare(),
     site: 'https://maxparisi.me',
-    trailingSlash: 'never',
-    integrations: [ sitemap() ]
+    trailingSlash: 'never'
 });
