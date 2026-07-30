@@ -7,6 +7,11 @@
 /athletics /about/athletics 302
 /languages /about/languages 302
 
+# RSS and Sitemap
+/rss.xml /projects/rss.xml 302
+/sitemap-index.xml /sitemap.xml 302
+/sitemap-0.xml /sitemap.xml 302
+
 # Blog
 /blog https://blog.maxparisi.me 302
 /blog/* https://blog.maxparisi.me/:splat 302

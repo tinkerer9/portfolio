@@ -13,8 +13,15 @@ function escapeXml(text: string) {
 }
 
 export const GET: APIRoute = async () => {
-	const projects = (await getCollection("projects"))
-		.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+	const projects = (await getCollection('projects'))
+		.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+	const lastBuildDate = projects.length
+		? projects.reduce(
+			(latest, project) => project.data.updated > latest ? project.data.updated : latest,
+			projects[0].data.updated
+		)
+		: new Date();
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -24,7 +31,7 @@ export const GET: APIRoute = async () => {
 	<description>Get updated about Max's latest projects.</description>
 	<link>${escapeXml(`${SITE}/projects`)}</link>
 	<language>en-us</language>
-	<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+	<lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>
 ${projects
 		.map((project) => `	<item>
 		<title>${escapeXml(project.data.title)}</title>

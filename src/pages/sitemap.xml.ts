@@ -15,9 +15,10 @@ function escapeXml(text: string) {
 export const GET: APIRoute = async () => {
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages
-	.map((page) => `  <url>
-    <loc>${escapeXml(`${SITE}${page.path}`)}</loc>
+${pages.map((page) => `  <url>
+    <loc>${escapeXml(`${SITE}${page.path}`)}</loc>${
+		page.updated ? `\n    <lastmod>${page.updated.toISOString().slice(0, 10)}</lastmod>` : ""
+	}
   </url>`).join("\n")}
 </urlset>
 `;

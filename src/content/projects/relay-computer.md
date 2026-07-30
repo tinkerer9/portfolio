@@ -1,6 +1,7 @@
 ---
 title: Relay Computer
 date: 2026-05-18
+updated: 2026-07-30
 img: /assets/projects/relay-computer/pcb.jpg
 img_alt: A green printed circuit board for a relay computer
 description: >-
