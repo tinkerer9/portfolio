@@ -1,4 +1,3 @@
-import { type APIContext } from 'astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
 
 interface Props {
@@ -14,7 +13,7 @@ export async function getStaticPaths() {
 	}));
 }
 
-export async function GET({ props, url }: APIContext & { props: Props }) {
+export async function GET({ props, url }: { props: Props; url: URL }) {
 	const { project } = props;
 
 	if (!project.body) {
@@ -46,9 +45,5 @@ ${project.data.description}
 ${body}
 `;
 
-	return new Response(markdown, {
-		headers: {
-			'Content-Type': 'text/markdown; charset=utf-8'
-		}
-	});
+	return new Response(markdown);
 }

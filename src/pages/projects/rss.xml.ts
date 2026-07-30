@@ -1,4 +1,3 @@
-import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 
 const SITE = "https://maxparisi.me";
@@ -12,7 +11,7 @@ function escapeXml(text: string) {
 		.replace(/'/g, "&apos;");
 }
 
-export const GET: APIRoute = async () => {
+export async function GET() {
 	const projects = (await getCollection('projects'))
 		.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
@@ -44,10 +43,5 @@ ${projects
 </rss>
 `;
 
-	return new Response(xml, {
-		headers: {
-			"Content-Type": "application/rss+xml; charset=utf-8",
-			"Cache-Control": "public, max-age=3600",
-		},
-	});
+	return new Response(xml);
 };
