@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 
-const site = "https://maxparisi.me";
+const SITE = "https://maxparisi.me";
 
 function escapeXml(text: string) {
 	return text
@@ -13,29 +13,29 @@ function escapeXml(text: string) {
 }
 
 export const GET: APIRoute = async () => {
-	const projects = await getCollection("projects");
+	const projects = (await getCollection("projects"))
+		.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
+    <atom:link href="${escapeXml(`${SITE}/projects/rss.xml`)}" rel="self" type="application/rss+xml" />
 	<title>Max Parisi's Projects</title>
 	<description>Get updated about Max's latest projects.</description>
-	<link>${site}/projects</link>
+	<link>${escapeXml(`${SITE}/projects`)}</link>
 	<language>en-us</language>
 	<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${projects
-		.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-		.map(
-			(project) => `	<item>
+		.map((project) => `	<item>
 		<title>${escapeXml(project.data.title)}</title>
 		<description>${escapeXml(project.data.description)}</description>
-		<link>${site}/projects/${project.id}</link>
-		<guid>${site}/projects/${project.id}</guid>
+		<link>${escapeXml(`${SITE}/projects/${project.id}`)}</link>
+		<guid isPermaLink="true">${escapeXml(`${SITE}/projects/${project.id}`)}</guid>
 		<pubDate>${project.data.date.toUTCString()}</pubDate>
-	</item>`
-		).join("\n")}
+	</item>`).join("\n")}
 </channel>
-</rss>`;
+</rss>
+`;
 
 	return new Response(xml, {
 		headers: {

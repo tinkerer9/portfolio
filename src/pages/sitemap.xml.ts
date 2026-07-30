@@ -1,20 +1,26 @@
 import type { APIRoute } from "astro";
-import { pages } from '../utils/pages.ts';
+import { pages } from "../utils/pages";
 
-const site = "https://maxparisi.me";
+const SITE = "https://maxparisi.me";
+
+function escapeXml(text: string) {
+	return text
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&apos;");
+}
 
 export const GET: APIRoute = async () => {
-	const urls = pages.map((page) => (`${site}${page.path}`));
-
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-	.map(
-		(loc) => `  <url>
-    <loc>${loc}</loc>
-  </url>`
-	).join("\n")}
-</urlset>`;
+${pages
+	.map((page) => `  <url>
+    <loc>${escapeXml(`${SITE}${page.path}`)}</loc>
+  </url>`).join("\n")}
+</urlset>
+`;
 
 	return new Response(xml, {
 		headers: {

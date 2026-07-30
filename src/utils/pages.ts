@@ -17,7 +17,8 @@ const staticPages = [
 	{ path: '/gear/printing', title: '3D Printing Gear' }
 ];
 
-const projects = await getCollection('projects');
+const projects = (await getCollection("projects"))
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 export const pages = [
 	...staticPages,
