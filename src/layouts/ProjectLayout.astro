@@ -12,7 +12,7 @@ interface Props {
 
 const { project } = Astro.props;
 
-const markdown = new URL(`${Astro.url.pathname}.md`, Astro.url);
+const markdown = new URL(`/projects/${project.id}.md`, Astro.url).href;
 ---
 
 <BaseLayout 

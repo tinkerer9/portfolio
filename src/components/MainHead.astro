@@ -8,10 +8,11 @@ interface Props {
 	image?: string;
 	imageAlt?: string;
 	noindex?: boolean;
-	markdown?: URL;
+	canonical?: string;
+	markdown?: string;
 }
 
-const { title, description, image, imageAlt, noindex, markdown } = Astro.props;
+const { title, description, image, imageAlt, noindex, canonical, markdown } = Astro.props;
 
 const imagePath = image ? new URL(image, Astro.site).href : null;
 
@@ -40,7 +41,7 @@ const jsonLdString = JSON.stringify(schema);
 <meta name="description" content={description} />
 <meta name="application-name" content="Max Parisi" />
 <meta name="author" content="Max Parisi" />
-<link rel="canonical" href={url} />
+<link rel="canonical" href={canonical ?? url} />
 {noindex && <meta name="robots" content="noindex" /> }
 
 <!-- Favicon -->
@@ -129,11 +130,6 @@ const jsonLdString = JSON.stringify(schema);
 
 <!-- Console Easter Egg -->
 <script>
-	const styles = getComputedStyle(document.documentElement);
-
-	const brand = styles.getPropertyValue('--font-brand').trim();
-	const body = styles.getPropertyValue('--font-body').trim();
-
 	console.log(
 		[
 			"%c👋 Hey there!%c",
@@ -150,7 +146,7 @@ const jsonLdString = JSON.stringify(schema);
 			"Have fun!",
 			"Max"
 		].join('\n'),
-		`font-size: 24px; font-family: ${brand}; font-weight: 500;`,
-		`font-size: 16px; font-family: ${body};`
+		`font-size: 24px; font-family: "Rubik"; font-weight: 500;`,
+		`font-size: 16px; font-family: "Public Sans";`
 	);
 </script>
