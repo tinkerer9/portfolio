@@ -1,48 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <style>
-    #light-icon {
-      display: inline;
-    }
-    #dark-icon {
-      display: none;
-    }
+    #light { display: inline; }
+    #dark { display: none; }
 
     @media (prefers-color-scheme: dark) {
-      #light-icon {
-        display: none;
-      }
-      #dark-icon {
-        display: inline;
-      }
+      #light { display: none; }
+      #dark { display: inline; }
     }
   </style>
-  <g id="light-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000">
-      <g>
-        <g transform="matrix(25,0,0,25,0,0)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true">
-            <defs>
-              <linearGradient id="gradient" x1="23" y1="43" x2="235" y2="202" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#c561f6"></stop>
-                  <stop offset=".5" stop-color="#7611a6"></stop>
-                  <stop offset="1" stop-color="#1c0056"></stop>
-              </linearGradient>
-            </defs>
-            <path fill="url(#gradient)" d="M72.5,150.63,100.79,128,72.5,105.37a12,12,0,1,1,15-18.74l40,32a12,12,0,0,1,0,18.74l-40,32a12,12,0,0,1-15-18.74ZM144,172h32a12,12,0,0,0,0-24H144a12,12,0,0,0,0,24ZM236,56V200a20,20,0,0,1-20,20H40a20,20,0,0,1-20-20V56A20,20,0,0,1,40,36H216A20,20,0,0,1,236,56Zm-24,4H44V196H212Z"></path>
-          </svg>
-        </g>
-      </g>
-    </svg>
-  </g>
-  <g id="dark-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000">
-      <g>
-        <g transform="matrix(25,0,0,25,0,0)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true">
-            <path fill="#FFF" d="M72.5,150.63,100.79,128,72.5,105.37a12,12,0,1,1,15-18.74l40,32a12,12,0,0,1,0,18.74l-40,32a12,12,0,0,1-15-18.74ZM144,172h32a12,12,0,0,0,0-24H144a12,12,0,0,0,0,24ZM236,56V200a20,20,0,0,1-20,20H40a20,20,0,0,1-20-20V56A20,20,0,0,1,40,36H216A20,20,0,0,1,236,56Zm-24,4H44V196H212Z"></path>
-          </svg>
-        </g>
-      </g>
-    </svg>
-  </g>
+
+  <defs>
+    <linearGradient id="g" x1="23" y1="43" x2="235" y2="202" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c561f6"/>
+      <stop offset=".5" stop-color="#7611a6"/>
+      <stop offset="1" stop-color="#1c0056"/>
+    </linearGradient>
+
+    <path id="icon" d="M72.5 150.63 100.79 128 72.5 105.37a12 12 0 1 1 15-18.74l40 32a12 12 0 0 1 0 18.74l-40 32a12 12 0 0 1-15-18.74ZM144 172h32a12 12 0 0 0 0-24H144a12 12 0 0 0 0 24ZM236 56V200a20 20 0 0 1-20 20H40a20 20 0 0 1-20-20V56A20 20 0 0 1 40 36H216A20 20 0 0 1 236 56Zm-24 4H44V196H212Z"/>
+  </defs>
+
+  <use id="light" href="#icon" fill="url(#g)"/>
+  <use id="dark" href="#icon" fill="#fff"/>
 </svg>
