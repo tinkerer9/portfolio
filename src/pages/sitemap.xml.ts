@@ -1,4 +1,4 @@
-import { pages } from "../utils/pages";
+import { pages } from "../data/pages";
 
 const SITE = "https://maxparisi.me";
 

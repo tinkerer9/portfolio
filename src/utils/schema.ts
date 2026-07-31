@@ -1,4 +1,4 @@
-import { socials } from "./socials";
+import { socials } from "../data/socials";
 
 interface SchemaProps {
 	title: string;
