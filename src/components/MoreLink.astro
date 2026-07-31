@@ -4,29 +4,31 @@ import { iconPaths } from '../data/icons';
 
 interface Props {
 	href: string;
-    icon?: keyof typeof iconPaths;
+	icon?: keyof typeof iconPaths;
 }
 
 const { href, icon = "arrow-right" } = Astro.props;
 ---
 
-<div class="more-link">
-    <a href={href}><slot /> <Icon icon={icon} size="1.2em" /></a>
-</div>
+<a href={href}>
+	<slot /> <Icon {icon} size="1.33em" />
+</a>
 
 <style>
-    .more-link {
-		margin-top: 0.5rem;
-	}
+	a {
+		display: flex;
+		align-items: center;
+		gap: 0.2em;
 
-	.more-link a {
+		margin-top: 0.5rem;
+
 		text-decoration: 1px solid underline transparent;
 		text-underline-offset: 0.25em;
 		transition: text-decoration-color var(--theme-transition);
 	}
 
-	.more-link a:hover,
-	.more-link a:focus {
+	a:hover,
+	a:focus-visible {
 		text-decoration-color: currentColor;
 	}
 </style>

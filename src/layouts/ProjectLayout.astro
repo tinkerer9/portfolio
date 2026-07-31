@@ -124,9 +124,9 @@ const markdown = new URL(`/projects/${project.id}.md`, Astro.url).href;
 	}
 
 	.back-link:hover,
-	.back-link:focus,
+	.back-link:focus-visible,
 	.content :global(a:hover),
-	.content :global(a:focus) {
+	.content :global(a:focus-visible) {
 		text-decoration-color: currentColor;
 	}
 
