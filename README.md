@@ -42,7 +42,7 @@ Here are a few of [my components](src/components):
 
 I also use components for everything from [*Call to Actions*](src/components/CallToAction.astro) to hidden [easter eggs](src/components/Konami.astro).
 
-### Collections
+### Content Collections
 
 Each of my projects is written in a [Markdown file](src/content/projects) and parsed by a [dynamic page](https://docs.astro.build/en/guides/routing/#static-ssg-mode) into HTML.
 [`[...slug].astro`](src/pages/projects/[...slug].astro) renders the Markdown into an Astro document (later to be transformed into HTML), while [`[...slug].md.ts`](src/pages/projects/[...slug].md.ts) uses an [endpoint](https://docs.astro.build/en/guides/routing/#static-ssg-mode) to generate a Markdown file for LLMs to read.
