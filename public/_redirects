@@ -11,8 +11,9 @@
 /sitemap-index.xml /sitemap.xml 302
 /sitemap-0.xml /sitemap.xml 302
 
-# Blog
+# Other Domains
 /blog https://blog.maxparisi.me 302
+/photos https://photos.maxparisi.me 302
 
 # Social Profiles
 /gh https://github.com/tinkerer9 302
