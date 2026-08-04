@@ -1,10 +1,13 @@
 # Temporary
-
+/summit https://reunion.maxparisi.me/donner-summit 302
 
 # Aliases
 /home / 302
 /athletics /about/athletics 302
+/sports /about/athletics 302
+/about/sports /about/athletics 302
 /languages /about/languages 302
+/logo /logos/color.png 302
 
 # RSS and Sitemap
 /rss.xml /projects/rss.xml 302
@@ -25,6 +28,7 @@
 # Repositories
 /ck https://github.com/tinkerer9/collabokeys 302
 /collabokeys https://github.com/tinkerer9/collabokeys 302
+/source https://github.com/tinkerer9/portfolio 302
 
 # Miscellaneous
 /ssss https://drive.google.com/file/d/1plJJTn0VJr9cU1vgyT_SLz5qBjrL-VgZ/view?usp=sharing 302
