@@ -15,7 +15,7 @@ export async function GET() {
 	const projects = (await getCollection("projects"))
 		.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-	const lastUpdatedDate = projects.length
+	const lastBuildDate = projects.length
 		? projects.reduce(
 				(latest, project) =>
 					project.data.updated > latest ? project.data.updated : latest,
@@ -40,12 +40,15 @@ export async function GET() {
     <copyright>© ${new Date().getFullYear()} Max Parisi</copyright>
     <atom:link href="${escapeXml(`${SITE}/projects/rss.xml`)}" rel="self" type="application/rss+xml" />
     <atom:link href="${escapeXml(`${SITE}/projects`)}" rel="alternate" type="text/html" />
-    <lastBuildDate>${lastUpdatedDate.toUTCString()}</lastBuildDate>
-    <pubDate>${lastUpdatedDate.toUTCString()}</pubDate>
+    <lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>
+    <ttl>60</ttl>
 ${projects
 	.map(
 		(project) => `    <item>
       <title>${escapeXml(project.data.title)}</title>
+      <link>${escapeXml(`${SITE}/projects/${project.id}`)}</link>
+      <guid isPermaLink="true">${escapeXml(`${SITE}/projects/${project.id}`)}</guid>
+      <pubDate>${project.data.date.toUTCString()}</pubDate>
       <description>${escapeXml(project.data.description)}</description>
 ${project.data.tags.map((tag) => `      <category>${escapeXml(tag)}</category>`).join("\n")}
       <dc:creator>Max Parisi</dc:creator>
@@ -53,9 +56,6 @@ ${project.data.tags.map((tag) => `      <category>${escapeXml(tag)}</category>`)
         <media:title>${escapeXml(project.data.title)}</media:title>
 ${project.data.img_alt ? `        <media:description type="plain">${escapeXml(project.data.img_alt)}</media:description>` : ""}
       </media:content>
-      <link>${escapeXml(`${SITE}/projects/${project.id}`)}</link>
-      <guid isPermaLink="true">${escapeXml(`${SITE}/projects/${project.id}`)}</guid>
-      <pubDate>${project.data.date.toUTCString()}</pubDate>
     </item>`
 	)
 	.join("\n")}
