@@ -4,39 +4,39 @@
 /serene https://www.castlepeak.com/about-serene-lakes/ 302
 
 # Aliases
-/home / 302
-/athletics /about/athletics 302
-/sports /about/athletics 302
-/about/sports /about/athletics 302
-/languages /about/languages 302
+/home / 301
+/athletics /about/athletics 301
+/sports /about/athletics 301
+/about/sports /about/athletics 301
+/languages /about/languages 301
 /logo /logos/color.png 302
 
 # RSS and Sitemap
 /rss.xml /projects/rss.xml 302
-/sitemap-index.xml /sitemap.xml 302
-/sitemap-0.xml /sitemap.xml 302
+/sitemap-index.xml /sitemap.xml 301
+/sitemap-0.xml /sitemap.xml 301
 
 # Other Domains
 /blog https://blog.maxparisi.me 302
-/photos https://photos.maxparisi.me 302
+/photos https://photos.maxparisi.me 301
 
 # Social Profiles
-/gh https://github.com/tinkerer9 302
-/github https://github.com/tinkerer9 302
-/mw https://makerworld.com/en/@Makermax101 302
-/makerworld https://makerworld.com/en/@Makermax101 302
-/arduino https://forum.arduino.cc/u/makermax101 302
+/gh https://github.com/tinkerer9 301
+/github https://github.com/tinkerer9 301
+/mw https://makerworld.com/en/@Makermax101 301
+/makerworld https://makerworld.com/en/@Makermax101 301
+/arduino https://forum.arduino.cc/u/makermax101 301
 
 # Repositories
-/ck https://github.com/tinkerer9/collabokeys 302
-/collabokeys https://github.com/tinkerer9/collabokeys 302
-/source https://github.com/tinkerer9/portfolio 302
+/ck https://github.com/tinkerer9/collabokeys 301
+/collabokeys https://github.com/tinkerer9/collabokeys 301
+/source https://github.com/tinkerer9/portfolio 301
 
 # Miscellaneous
 /ssss https://drive.google.com/file/d/1plJJTn0VJr9cU1vgyT_SLz5qBjrL-VgZ/view?usp=sharing 302
 /generator https://docs.google.com/document/d/1E_ZnOyNQBm-27CrHIv8IMdg62yaKBFc1zo0RPkBBylc/edit?usp=sharing 302
 
 # Dynamic
-/blog/* https://blog.maxparisi.me/:splat 302
-/gh/* https://github.com/tinkerer9/:splat 302
-/github/* https://github.com/tinkerer9/:splat 302
+/blog/* https://blog.maxparisi.me/:splat 301
+/gh/* https://github.com/tinkerer9/:splat 301
+/github/* https://github.com/tinkerer9/:splat 301
