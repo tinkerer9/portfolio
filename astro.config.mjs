@@ -5,5 +5,6 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
     adapter: cloudflare(),
     site: 'https://maxparisi.me',
-    trailingSlash: 'never'
+    trailingSlash: 'never',
+    prefetch: { prefetchAll: true }
 });
