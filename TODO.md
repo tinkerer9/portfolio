@@ -5,3 +5,5 @@
 - Finish `/about/athetics`
 - Add `security.txt`
 - `rel="noopener noreferrer"` for links with `target="_blank"`
+- use spaces instead of tabs
+- add blog (RSS?)

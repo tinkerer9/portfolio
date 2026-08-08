@@ -11,6 +11,6 @@
   - easter eggs?
 - Mom's b-day gift
 - Ethernet wiring
-- Propane tank
+- Propane shed + meter
 - DIY photobooth
 - CollaboKeys
