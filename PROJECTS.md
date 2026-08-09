@@ -2,7 +2,7 @@
 
 ## To Finish
 
-- Relay Computer
+- *none*
 
 ## To Add
 
