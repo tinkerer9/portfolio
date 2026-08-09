@@ -1,7 +1,5 @@
 import { pages } from "../data/pages";
 
-const SITE = "https://maxparisi.me";
-
 function escapeXml(text: string) {
 	return text
 		.replace(/&/g, "&amp;")
@@ -11,11 +9,13 @@ function escapeXml(text: string) {
 		.replace(/'/g, "&apos;");
 }
 
-export async function GET() {
+export async function GET(context: { site: URL }) {
+	const site = context.site.origin;
+
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map((page) => `  <url>
-    <loc>${escapeXml(`${SITE}${page.path}`)}</loc>${
+    <loc>${escapeXml(`${site}${page.path}`)}</loc>${
 		page.updated ? `\n    <lastmod>${page.updated.toISOString().slice(0, 10)}</lastmod>` : ""
 	}
   </url>`).join("\n")}

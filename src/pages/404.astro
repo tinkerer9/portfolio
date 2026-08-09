@@ -68,31 +68,10 @@ const normalizedPages = pages.map((page) => ({
 		return row[b.length];
 	}
 	
-	function scorePath(target, input) {
-		let score = levenshtein(input, target);
-
-		const targetParts = target.split('/').filter(Boolean);
-		const inputParts = input.split('/').filter(Boolean);
-
-		if (targetParts.length > inputParts.length) {
-			const extraParts = targetParts.slice(
-				0,
-				targetParts.length - inputParts.length
-			);
-
-			score -= Math.min(
-				extraParts.join('/').length + extraParts.length,
-				5
-			);
-		}
-
-		return score;
-	}
-
 	const currentPath = normalize(window.location.pathname);
 
 	const suggestion = normalizedPages.reduce((best, page) => {
-		const score = scorePath(page.normalized, currentPath);
+		const score = levenshtein(currentPath, page.normalized);
 
 		if (!best || score < best.score) {
 			return { page, score };
