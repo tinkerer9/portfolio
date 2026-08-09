@@ -5,74 +5,74 @@ const year = new Date().getFullYear();
 ---
 
 <footer>
-	<div class="group">
-		<p>&copy; {year} Max Parisi</p>
-	</div>
-	<p class="socials">
-		<a href="/about">About</a>
-		<a href="mailto:max@maxparisi.me">Contact</a>
-		{
-			socials.map(({ href, label }) => (
-				<a href={href}>{label}</a>
-			))
-		}
-		<a href="/projects/rss.xml">Feed</a>
-		<a href="/sitemap.xml">Sitemap</a>
-	</p>
+    <div class="group">
+        <p>&copy; {year} Max Parisi</p>
+    </div>
+    <p class="socials">
+        <a href="/about">About</a>
+        <a href="mailto:max@maxparisi.me">Contact</a>
+        {
+            socials.map(({ href, label }) => (
+                <a href={href}>{label}</a>
+            ))
+        }
+        <a href="/projects/rss.xml">Feed</a>
+        <a href="/sitemap.xml">Sitemap</a>
+    </p>
 </footer>
 
 <style>
-	footer {
-		display: flex;
-		flex-direction: column;
-		gap: 1.25rem;
-		margin-top: auto;
-		padding: 3rem 2rem 3rem;
-		text-align: center;
-		color: var(--gray-400);
-		font-size: var(--text-sm);
-	}
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-top: auto;
+        padding: 3rem 2rem 3rem;
+        text-align: center;
+        color: var(--gray-400);
+        font-size: var(--text-sm);
+    }
 
-	footer a {
-		color: var(--gray-400);
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+    footer a {
+        color: var(--gray-400);
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
 
-	footer a:hover,
-	footer a:focus-visible {
-		text-decoration-color: currentColor;
-	}
+    footer a:hover,
+    footer a:focus-visible {
+        text-decoration-color: currentColor;
+    }
 
-	.group {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
+    .group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-	.socials {
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
 
-	@media (min-width: 50em) {
-		footer {
-			flex-direction: row;
-			justify-content: space-between;
-			padding: 2.5rem 5rem;
-		}
+    @media (min-width: 50em) {
+        footer {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2.5rem 5rem;
+        }
 
-		.group {
-			flex-direction: row;
-			gap: 1rem;
-			flex-wrap: wrap;
-		}
+        .group {
+            flex-direction: row;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-		.socials {
-			justify-content: flex-end;
-		}
-	}
+        .socials {
+            justify-content: flex-end;
+        }
+    }
 </style>

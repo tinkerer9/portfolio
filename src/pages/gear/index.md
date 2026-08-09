@@ -10,5 +10,6 @@ title: My Gear
 Here's what I have so far:
 
 - [Camera gear](/gear/camera)
-<!-- - [3D printing gear](/gear/printing) -->
 - *more to come...*
+
+<!-- - [3D printing gear](/gear/printing) -->

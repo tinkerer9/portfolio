@@ -1,26 +1,26 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 
 interface Props {
-	project: CollectionEntry<'projects'>;
+    project: CollectionEntry<'projects'>;
 }
 
 export async function getStaticPaths() {
-	const projects = await getCollection('projects');
+    const projects = await getCollection('projects');
 
-	return projects.map((project) => ({
-		params: { slug: project.id },
-		props: { project }
-	}));
+    return projects.map((project) => ({
+        params: { slug: project.id },
+        props: { project }
+    }));
 }
 
 export async function GET({ props, url }: { props: Props; url: URL }) {
-	const { project } = props;
+    const { project } = props;
 
-	if (!project.body) {
-		return new Response('Project has no Markdown body.', { status: 500 });
-	}
+    if (!project.body) {
+        return new Response('Project has no Markdown body.', { status: 500 });
+    }
 
-	const site = url.origin;
+    const site = url.origin;
 
     const body = project.body
         // use full path for links and images:
@@ -36,7 +36,7 @@ export async function GET({ props, url }: { props: Props; url: URL }) {
         // keep newline spacing clean:
         .replace(/\n{3,}/g, '\n\n');
     
-	const markdown = `# ${project.data.title}
+    const markdown = `# ${project.data.title}
 
 ${project.data.description}
 
@@ -45,5 +45,5 @@ ${project.data.description}
 ${body}
 `;
 
-	return new Response(markdown);
+    return new Response(markdown);
 }

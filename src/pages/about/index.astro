@@ -6,128 +6,128 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-	title="About Me | Max Parisi" 
-	description="I am a developer and maker passionate about programming, engineering, 3D design, and building creative projects."
-	image="/assets/skiing.jpg"
-	imageAlt="A picture of Max ski racing"
+    title="About Me | Max Parisi" 
+    description="I am a developer and maker passionate about programming, engineering, 3D design, and building creative projects."
+    image="/assets/skiing.jpg"
+    imageAlt="A picture of Max ski racing"
 >
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About Me"
-				tagline="A little more about me, my interests, and the things I love creating."
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/max/skiing.jpg"
-					alt="A picture of Max ski racing"
-				/>
-			</Hero>
+    <div class="stack gap-20">
+        <main class="wrapper about">
+            <Hero
+                title="About Me"
+                tagline="A little more about me, my interests, and the things I love creating."
+            >
+                <img
+                    width="1553"
+                    height="873"
+                    src="/assets/max/skiing.jpg"
+                    alt="A picture of Max ski racing"
+                />
+            </Hero>
 
-			<section>
-				<h2 class="section-title">About Me</h2>
-				<div class="content">
-					<p>
-						Hi! I'm Max, a developer, maker, and photographer who loves turning ideas into reality.
-						Whether I'm writing code, designing hardware, or working behind a camera, I enjoy creating
-						projects that are both functional and meaningful. I'm naturally curious and enjoy learning
-						how things work, which has led me to explore everything from web development and
-						electronics to networking and smart home automation.
-					</p><br>
-					<p>
-						I learn best by building. Rather than simply reading about new technologies, I enjoy
-						experimenting, solving problems, and refining projects until they work the way I imagined.
-						Every project teaches me something new, whether it's improving my programming skills,
-						discovering a more efficient solution, or gaining experience with a new tool or technology.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>
-						I have experience developing full-stack web applications with JavaScript and Node.js,
-						creating responsive user interfaces and reliable backend services. I'm passionate about 
-						embedded systems and electronics, designing projects with ESP32 and Arduino 
-						microcontrollers, sensors, displays, and custom hardware. Beyond programming, I enjoy
-						photography, 3D printing, and CAD design, allowing me to bring together digital and physical
-						creations into complete, polished projects.
-					</p>
+            <section>
+                <h2 class="section-title">About Me</h2>
+                <div class="content">
+                    <p>
+                        Hi! I'm Max, a developer, maker, and photographer who loves turning ideas into reality.
+                        Whether I'm writing code, designing hardware, or working behind a camera, I enjoy creating
+                        projects that are both functional and meaningful. I'm naturally curious and enjoy learning
+                        how things work, which has led me to explore everything from web development and
+                        electronics to networking and smart home automation.
+                    </p><br>
+                    <p>
+                        I learn best by building. Rather than simply reading about new technologies, I enjoy
+                        experimenting, solving problems, and refining projects until they work the way I imagined.
+                        Every project teaches me something new, whether it's improving my programming skills,
+                        discovering a more efficient solution, or gaining experience with a new tool or technology.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Skills</h2>
+                <div class="content">
+                    <p>
+                        I have experience developing full-stack web applications with JavaScript and Node.js,
+                        creating responsive user interfaces and reliable backend services. I'm passionate about 
+                        embedded systems and electronics, designing projects with ESP32 and Arduino 
+                        microcontrollers, sensors, displays, and custom hardware. Beyond programming, I enjoy
+                        photography, 3D printing, and CAD design, allowing me to bring together digital and physical
+                        creations into complete, polished projects.
+                    </p>
 
-					<MoreLink href="/about/languages">Languages</MoreLink>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Interests</h2>
-				<div class="content">
-					<p>
-						I enjoy building projects that solve real problems or create unique experiences. Some of
-						my favorite projects include custom web applications, smart home integrations with Home
-						Assistant, electronics and IoT devices, interactive websites, and tools that combine
-						hardware with software. I like exploring new ideas, refining them through iteration, and
-						creating projects that are both technically interesting and enjoyable to use.
-					</p>
-				</div>
-			</section>
-		</main>
-	</div>
+                    <MoreLink href="/about/languages">Languages</MoreLink>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Interests</h2>
+                <div class="content">
+                    <p>
+                        I enjoy building projects that solve real problems or create unique experiences. Some of
+                        my favorite projects include custom web applications, smart home integrations with Home
+                        Assistant, electronics and IoT devices, interactive websites, and tools that combine
+                        hardware with software. I like exploring new ideas, refining them through iteration, and
+                        creating projects that are both technically interesting and enjoyable to use.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+    }
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+    img {
+        margin-top: 1.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-md);
+    }
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: var(--gray-200);
+    }
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+    .section-title {
+        grid-column-start: 1;
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+    }
 
-	.content {
-		grid-column: 2 / 4;
-	}
+    .content {
+        grid-column: 2 / 4;
+    }
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+    .content :global(a) {
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
 
-	.content :global(a:hover),
-	.content :global(a:focus-visible) {
-		text-decoration-color: currentColor;
-	}
+    .content :global(a:hover),
+    .content :global(a:focus-visible) {
+        text-decoration-color: currentColor;
+    }
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+    @media (min-width: 50em) {
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 60% 1fr;
+        }
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+        .about > :global(:first-child) {
+            grid-column-start: 2;
+        }
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+        section {
+            display: contents;
+            font-size: var(--text-lg);
+        }
+    }
 </style>

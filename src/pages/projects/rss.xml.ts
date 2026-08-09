@@ -1,29 +1,29 @@
 import { getCollection } from "astro:content";
 
 function escapeXml(text: string) {
-	return text
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/"/g, "&quot;")
-		.replace(/'/g, "&apos;");
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&apos;");
 }
 
 export async function GET(context: { site: URL }) {
     const site = context.site.origin;
 
-	const projects = (await getCollection("projects"))
-		.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    const projects = (await getCollection("projects"))
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-	const lastBuildDate = projects.length
-		? projects.reduce(
-				(latest, project) =>
-					project.data.updated > latest ? project.data.updated : latest,
-				projects[0].data.updated
-			)
-		: new Date();
+    const lastBuildDate = projects.length
+        ? projects.reduce(
+                (latest, project) =>
+                    project.data.updated > latest ? project.data.updated : latest,
+                projects[0].data.updated
+            )
+        : new Date();
 
-	const xml = `<?xml version="1.0" encoding="UTF-8"?>
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Max Parisi's Projects</title>
@@ -43,8 +43,8 @@ export async function GET(context: { site: URL }) {
     <lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>
     <ttl>60</ttl>
 ${projects
-	.map(
-		(project) => `    <item>
+    .map(
+        (project) => `    <item>
       <title>${escapeXml(project.data.title)}</title>
       <link>${escapeXml(`${site}/projects/${project.id}`)}</link>
       <guid isPermaLink="true">${escapeXml(`${site}/projects/${project.id}`)}</guid>
@@ -57,16 +57,16 @@ ${project.data.tags.map((tag) => `      <category>${escapeXml(tag)}</category>`)
 ${project.data.img_alt ? `        <media:description type="plain">${escapeXml(project.data.img_alt)}</media:description>` : ""}
       </media:content>
     </item>`
-	)
-	.join("\n")}
+    )
+    .join("\n")}
   </channel>
 </rss>
 `;
 
-	return new Response(xml, { 
-		headers: {
-			"Content-Type": "application/rss+xml; charset=utf-8",
-			"Cache-Control": "public, max-age=3600"
-		}
-	});
+    return new Response(xml, { 
+        headers: {
+            "Content-Type": "application/rss+xml; charset=utf-8",
+            "Cache-Control": "public, max-age=3600"
+        }
+    });
 }

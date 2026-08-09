@@ -3,32 +3,32 @@ import Icon from './Icon.astro';
 import { iconPaths } from '../data/icons';
 
 interface Props {
-	href: string;
-	icon?: keyof typeof iconPaths;
+    href: string;
+    icon?: keyof typeof iconPaths;
 }
 
 const { href, icon = "arrow-right" } = Astro.props;
 ---
 
 <a href={href}>
-	<slot /> <Icon {icon} size="1.33em" />
+    <slot /> <Icon {icon} size="1.33em" />
 </a>
 
 <style>
-	a {
-		display: flex;
-		align-items: center;
-		gap: 0.2em;
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
 
-		margin-top: 0.5rem;
+        margin-top: 0.5rem;
 
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
 
-	a:hover,
-	a:focus-visible {
-		text-decoration-color: currentColor;
-	}
+    a:hover,
+    a:focus-visible {
+        text-decoration-color: currentColor;
+    }
 </style>

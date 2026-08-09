@@ -3,60 +3,60 @@ import Icon from './Icon.astro';
 ---
 
 <section class="box skills">
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Full Stack</h2>
-		<p>I design and build modern web applications using HTML, CSS, JavaScript, and Node.js, creating responsive interfaces backed by reliable server-side functionality.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="cube-focus" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>3D Design</h2>
-		<p>I design, manufacture, and iterate physical parts using CAD software and modern 3D printers for functional prototypes and custom projects.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Problem Solving</h2>
-		<p>I analyze complex technical challenges, research solutions, debug hardware and software issues, and continually improve systems through experimentation.</p>
-	</div>
+    <div class="stack gap-2 lg:gap-4">
+        <Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+        <h2>Full Stack</h2>
+        <p>I design and build modern web applications using HTML, CSS, JavaScript, and Node.js, creating responsive interfaces backed by reliable server-side functionality.</p>
+    </div>
+    <div class="stack gap-2 lg:gap-4">
+        <Icon icon="cube-focus" color="var(--accent-regular)" size="2.5rem" gradient />
+        <h2>3D Design</h2>
+        <p>I design, manufacture, and iterate physical parts using CAD software and modern 3D printers for functional prototypes and custom projects.</p>
+    </div>
+    <div class="stack gap-2 lg:gap-4">
+        <Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+        <h2>Problem Solving</h2>
+        <p>I analyze complex technical challenges, research solutions, debug hardware and software issues, and continually improve systems through experimentation.</p>
+    </div>
 </section>
 
 <style>
-	.box {
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-		padding: 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
-	}
+    .box {
+        border: 1px solid var(--gray-800);
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        background-color: var(--gray-999_40);
+        box-shadow: var(--shadow-sm);
+    }
 
-	.skills {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
+    .skills {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
 
-	.skills h2 {
-		font-size: var(--text-lg);
-	}
+    .skills h2 {
+        font-size: var(--text-lg);
+    }
 
-	.skills p {
-		color: var(--gray-400);
-	}
+    .skills p {
+        color: var(--gray-400);
+    }
 
-	@media (min-width: 50em) {
-		.box {
-			border-radius: 1.5rem;
-			padding: 2.5rem;
-		}
+    @media (min-width: 50em) {
+        .box {
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+        }
 
-		.skills {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 5rem;
-		}
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5rem;
+        }
 
-		.skills h2 {
-			font-size: var(--text-2xl);
-		}
-	}
+        .skills h2 {
+            font-size: var(--text-2xl);
+        }
+    }
 </style>

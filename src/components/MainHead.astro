@@ -3,13 +3,13 @@ import '../styles/global.css';
 import { getSchema } from "../utils/schema";
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
-	imageAlt?: string;
-	noindex?: boolean;
-	canonical?: string;
-	markdown?: string;
+    title: string;
+    description: string;
+    image?: string;
+    imageAlt?: string;
+    noindex?: boolean;
+    canonical?: string;
+    markdown?: string;
 }
 
 const { title, description, image, imageAlt, noindex, canonical, markdown } = Astro.props;
@@ -22,11 +22,11 @@ const isHome = Astro.url.pathname === "/";
 const isProject = Astro.url.pathname.startsWith("/projects/");
 
 const schema = getSchema({
-	title,
-	description,
-	url,
-	isHome,
-	isProject
+    title,
+    description,
+    url,
+    isHome,
+    isProject
 });
 
 const jsonLdString = JSON.stringify(schema);
@@ -86,43 +86,43 @@ const jsonLdString = JSON.stringify(schema);
 
 <!-- Theme Preferences -->
 <script is:inline> // is:inline so this runs ASAP (otherwise there will be an initial "flicker")
-	const storedTheme = localStorage.getItem('theme');
-	const documentElement = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+    const documentElement = document.documentElement;
 
-	const isDark = storedTheme === 'dark';
+    const isDark = storedTheme === 'dark';
 
-	documentElement.classList.toggle('theme-dark', isDark);
+    documentElement.classList.toggle('theme-dark', isDark);
 
-	let printing = false;
-	let wasDark = false; // set to correct value in 'beforeprint'
+    let printing = false;
+    let wasDark = false; // set to correct value in 'beforeprint'
 
-	const observer = new MutationObserver(() => {
-		if (printing) return;
+    const observer = new MutationObserver(() => {
+        if (printing) return;
 
-		localStorage.setItem(
-			'theme',
-			documentElement.classList.contains('theme-dark') ? 'dark' : 'light',
-		);
-	});
+        localStorage.setItem(
+            'theme',
+            documentElement.classList.contains('theme-dark') ? 'dark' : 'light',
+        );
+    });
 
-	observer.observe(documentElement, {
-		attributes: true,
-		attributeFilter: ['class'],
-	});
+    observer.observe(documentElement, {
+        attributes: true,
+        attributeFilter: ['class'],
+    });
 
-	window.addEventListener('beforeprint', () => {
-		printing = true;
-		wasDark = documentElement.classList.contains('theme-dark');
-		documentElement.classList.add('printing');
-		documentElement.classList.remove('theme-dark');
-		
-	});
+    window.addEventListener('beforeprint', () => {
+        printing = true;
+        wasDark = documentElement.classList.contains('theme-dark');
+        documentElement.classList.add('printing');
+        documentElement.classList.remove('theme-dark');
+        
+    });
 
-	window.addEventListener('afterprint', () => {
-		if (wasDark) documentElement.classList.add('theme-dark');
-		documentElement.classList.remove('printing');
-		printing = false;
-	});
+    window.addEventListener('afterprint', () => {
+        if (wasDark) documentElement.classList.add('theme-dark');
+        documentElement.classList.remove('printing');
+        printing = false;
+    });
 </script>
 
 <!-- JSON-LD Schema -->
@@ -130,23 +130,23 @@ const jsonLdString = JSON.stringify(schema);
 
 <!-- Console Easter Egg -->
 <script>
-	console.log(
-		[
-			"%c👋 Hey there!%c",
-			"",
-			"Looks like you've found the console.",
-			"",
-			"Most people see my portfolio...",
-			"but you took a look under the hood.",
-			"",
-			"Interested to see how it works?",
-			"Check out the source code at",
-			"https://maxparisi.me/gh/portfolio",
-			"",
-			"Have fun!",
-			"Max"
-		].join('\n'),
-		`font-size: 24px; font-family: "Rubik"; font-weight: 500;`,
-		`font-size: 16px; font-family: "Public Sans";`
-	);
+    console.log(
+        [
+            "%c👋 Hey there!%c",
+            "",
+            "Looks like you've found the console.",
+            "",
+            "Most people see my portfolio...",
+            "but you took a look under the hood.",
+            "",
+            "Interested to see how it works?",
+            "Check out the source code at",
+            "https://maxparisi.me/gh/portfolio",
+            "",
+            "Have fun!",
+            "Max"
+        ].join('\n'),
+        `font-size: 24px; font-family: "Rubik"; font-weight: 500;`,
+        `font-size: 16px; font-family: "Public Sans";`
+    );
 </script>

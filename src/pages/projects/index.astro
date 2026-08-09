@@ -6,31 +6,31 @@ import Project from '../../components/Project.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const projects = (await getCollection('projects'))
-	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout
-	title="My Projects | Max Parisi"
-	description="Explore projects by Max Parisi, including software, electronics, photography, CAD designs, and hardware experiments."
-	image={projects[0].data.img}
-	imageAlt={projects[0].data.img_alt}
+    title="My Projects | Max Parisi"
+    description="Explore projects by Max Parisi, including software, electronics, photography, CAD designs, and hardware experiments."
+    image={projects[0].data.img}
+    imageAlt={projects[0].data.img_alt}
 >
-	<div class="stack gap-20">
-		<main class="wrapper stack gap-8">
-			<Hero
-				title="My Projects"
-				tagline="Take a look at some of my projects from the past few years."
-				align="start"
-			/>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<Project project={project} />
-						</li>
-					))
-				}
-			</Grid>
-		</main>
-	</div>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <Hero
+                title="My Projects"
+                tagline="Take a look at some of my projects from the past few years."
+                align="start"
+            />
+            <Grid variant="offset">
+                {
+                    projects.map((project) => (
+                        <li>
+                            <Project project={project} />
+                        </li>
+                    ))
+                }
+            </Grid>
+        </main>
+    </div>
 </BaseLayout>

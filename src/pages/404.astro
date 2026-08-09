@@ -6,102 +6,102 @@ import { pages } from '../data/pages.ts';
 Astro.response.status = 404;
 
 function normalize(path: string) {
-	try { // decodeURIComponent could throw an error
-		path = decodeURIComponent(path);
-	} catch {}
+    try { // decodeURIComponent could throw an error
+        path = decodeURIComponent(path);
+    } catch {}
 
-	return path
-		.toLowerCase()
-		.replace(/\/+/g, '/')
-		.replace(/\/$/, '') || '/';
+    return path
+        .toLowerCase()
+        .replace(/\/+/g, '/')
+        .replace(/\/$/, '') || '/';
 }
 
 const normalizedPages = pages.map((page) => ({
-	...page,
-	normalized: normalize(page.path)
+    ...page,
+    normalized: normalize(page.path)
 }));
 ---
 
 <BaseLayout title="404 | Max Parisi" description="404: Page not found">
-	<Hero title="404" tagline="Page Not Found">
-		<div class="suggestion-container" id="container" hidden aria-live="polite">
-			<p>Were you looking for <a id="link"></a>?</p>
-		</div>
-	</Hero>
+    <Hero title="404" tagline="Page Not Found">
+        <div class="suggestion-container" id="container" hidden aria-live="polite">
+            <p>Were you looking for <a id="link"></a>?</p>
+        </div>
+    </Hero>
 </BaseLayout>
 
 <script define:vars={{ normalizedPages }}>
-	const container = document.querySelector('#container');
-	const link = document.querySelector('#link');
+    const container = document.querySelector('#container');
+    const link = document.querySelector('#link');
 
-	function normalize(path) {
-		try { // decodeURIComponent could throw an error
-			path = decodeURIComponent(path);
-		} catch {}
+    function normalize(path) {
+        try { // decodeURIComponent could throw an error
+            path = decodeURIComponent(path);
+        } catch {}
 
-		return path
-			.toLowerCase()
-			.replace(/\/+/g, '/')
-			.replace(/\/$/, '') || '/';
-	}
+        return path
+            .toLowerCase()
+            .replace(/\/+/g, '/')
+            .replace(/\/$/, '') || '/';
+    }
 
-	function levenshtein(a, b) {
-		const row = Array.from({ length: b.length + 1 }, (_, i) => i);
+    function levenshtein(a, b) {
+        const row = Array.from({ length: b.length + 1 }, (_, i) => i);
 
-		for (let i = 1; i <= a.length; i++) {
-			let previous = row[0];
-			row[0] = i;
+        for (let i = 1; i <= a.length; i++) {
+            let previous = row[0];
+            row[0] = i;
 
-			for (let j = 1; j <= b.length; j++) {
-				const current = row[j];
+            for (let j = 1; j <= b.length; j++) {
+                const current = row[j];
 
-				row[j] = Math.min(
-					row[j] + 1,
-					row[j - 1] + 1,
-					previous + (a[i - 1] !== b[j - 1] ? 1 : 0)
-				);
+                row[j] = Math.min(
+                    row[j] + 1,
+                    row[j - 1] + 1,
+                    previous + (a[i - 1] !== b[j - 1] ? 1 : 0)
+                );
 
-				previous = current;
-			}
-		}
+                previous = current;
+            }
+        }
 
-		return row[b.length];
-	}
-	
-	const currentPath = normalize(window.location.pathname);
+        return row[b.length];
+    }
+    
+    const currentPath = normalize(window.location.pathname);
 
-	const suggestion = normalizedPages.reduce((best, page) => {
-		const score = levenshtein(currentPath, page.normalized);
+    const suggestion = normalizedPages.reduce((best, page) => {
+        const score = levenshtein(currentPath, page.normalized);
 
-		if (!best || score < best.score) {
-			return { page, score };
-		}
+        if (!best || score < best.score) {
+            return { page, score };
+        }
 
-		return best;
-	}, null)?.page;
+        return best;
+    }, null)?.page;
 
-	if (suggestion) {
-		link.href = suggestion.path;
-		link.textContent = suggestion.title;
-		container.hidden = false;
-	}
+    if (suggestion) {
+        link.href = suggestion.path;
+        link.textContent = suggestion.title;
+        container.hidden = false;
+    }
 </script>
 
 <style>
-	.suggestion-container {
-		margin-top: 0.5rem;
-		align-self: center;
-		font-size: var(--text-md);
-	}
+    .suggestion-container {
+        margin-top: 0.5rem;
+        align-self: center;
+        font-size: var(--text-md);
+    }
 
-	.suggestion-container a {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+    .suggestion-container a {
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
 
-	.suggestion-container a:hover,
-	.suggestion-container a:focus-visible {
-		text-decoration-color: currentColor;
-	}
+    .suggestion-container a:hover,
+    .suggestion-container a:focus-visible {
+        text-decoration-color: currentColor;
+    }
 </style>
