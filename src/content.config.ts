@@ -4,7 +4,10 @@ import { z } from 'astro/zod';
 
 export const collections = {
     projects: defineCollection({
-        loader: glob({ base: './src/content/projects', pattern: '**/*.md' }),
+        loader: glob({
+            base: './src/content/projects',
+            pattern: ['**/*.md', '!**/_*/**', '!**/_*.md']
+        }),
         schema: z.object({
             title: z.string(),
             description: z.string(),
