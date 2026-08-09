@@ -13,7 +13,7 @@ const year = new Date().getFullYear();
         <a href="mailto:max@maxparisi.me">Contact</a>
         {
             socials.map(({ href, label }) => (
-                <a href={href}>{label}</a>
+                <a href={href} target="_blank" rel="noopener">{label}</a>
             ))
         }
         <a href="/projects/rss.xml">Feed</a>
