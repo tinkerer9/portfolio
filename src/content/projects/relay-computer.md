@@ -1,7 +1,7 @@
 ---
 title: Relay Computer
 date: 2026-05-18
-updated: 2026-08-09
+updated: 2026-08-12
 img: /assets/projects/relay-computer/pcb.jpg
 img_alt: A green printed circuit board for a relay computer
 description: >-
@@ -21,7 +21,7 @@ tags:
 Yup, you heard that right&mdash;I built a computer from the ground up!
 
 Fine, that might not be the most accurate statement.
-It's not much of a *"computer,"* and I definitely didn't build it from materials 50 feet underground.
+It's not much of a *"computer,"* and I definitely didn't create it from nothing.
 
 But for all intents and purposes, I'll call it a **computer**.
 
