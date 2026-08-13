@@ -16,7 +16,7 @@ export const collections = {
             tags: z.array(z.string()),
             img: z.string(),
             img_alt: z.string().optional(),
-            index: z.boolean().default(true),
+            noindex: z.boolean().default(false),
             comments: z.boolean().default(true)
         })
     })

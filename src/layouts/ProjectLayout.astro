@@ -22,7 +22,7 @@ const markdown = new URL(`/projects/${project.id}.md`, Astro.url).href;
     image={project.data.img}
     imageAlt={project.data.img_alt}
     markdown={markdown}
-    noindex={!project.data.index}
+    noindex={project.data.noindex}
 >
     <div class="stack gap-15">
         <header>
@@ -48,7 +48,7 @@ const markdown = new URL(`/projects/${project.id}.md`, Astro.url).href;
             </div>
         </main>
 
-        {project.data.comments && (
+        { project.data.comments && (
             <section class="wrapper comments">
                 <Comments />
             </section>

@@ -42,7 +42,7 @@ const jsonLdString = JSON.stringify(schema);
 <meta name="application-name" content="Max Parisi" />
 <meta name="author" content="Max Parisi" />
 <link rel="canonical" href={canonical ?? url} />
-{noindex && <meta name="robots" content="noindex" /> }
+{ noindex && <meta name="robots" content="noindex" /> }
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -66,19 +66,19 @@ const jsonLdString = JSON.stringify(schema);
 <meta property="og:description" content={description} />
 <meta property="og:site_name" content="Max Parisi" />
 <meta property="og:locale" content="en_US" />
-{imagePath && <meta property="og:image" content={imagePath} /> }
-{imageAlt && <meta property="og:image:alt" content={imageAlt} /> }
+{ imagePath && <meta property="og:image" content={imagePath} /> }
+{ imageAlt && <meta property="og:image:alt" content={imageAlt} /> }
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content={imagePath ? "summary_large_image" : "summary"} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-{imagePath && <meta name="twitter:image" content={imagePath} /> }
+{ imagePath && <meta name="twitter:image" content={imagePath} /> }
 
 <!-- Sitemap and RSS Feed -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title="Subscribe to RSS Feed" href="/projects/rss.xml" />
-{markdown && <link rel="alternate" type="text/markdown" title="LLM-friendly version" href={markdown} /> }
+{ markdown && <link rel="alternate" type="text/markdown" title="LLM-friendly version" href={markdown} /> }
 
 <!-- Preloading -->
 <link rel="preload" href="/fonts/rubik-600.woff2" as="font" type="font/woff2" crossorigin />

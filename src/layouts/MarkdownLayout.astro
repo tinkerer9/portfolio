@@ -11,7 +11,7 @@ const { frontmatter } = Astro.props;
     description={frontmatter.description}
     image={frontmatter.img}
     imageAlt={frontmatter.img_alt}
-    noindex={frontmatter.index === "false"}
+    noindex={frontmatter.noindex}
 >
     <div class="stack gap-15">
         <header>
@@ -25,14 +25,14 @@ const { frontmatter } = Astro.props;
         
         <main class="wrapper">
             <div class="stack gap-10 content">
-                {frontmatter.img && <img src={frontmatter.img} alt={frontmatter.img_alt || ''} /> }
+                { frontmatter.img && <img src={frontmatter.img} alt={frontmatter.img_alt || ''} /> }
                 <div class="markdown">
                     <slot />
                 </div>
             </div>
         </main>
 
-        {frontmatter.comments && (
+        { frontmatter.comments && (
             <section class="wrapper comments">
                 <Comments />
             </section>
