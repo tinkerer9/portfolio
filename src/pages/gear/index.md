@@ -5,7 +5,7 @@ title: My Gear
 
 <!-- markdownlint-disable MD001 -->
 
-**This project page isn't yet completed&mdash;please come back later!**
+**This page isn't yet completed&mdash;please come back later!**
 
 Here's what I have so far:
 
