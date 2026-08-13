@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
 title: Languages
+comments: true
 ---
 
 <!-- markdownlint-disable MD001 -->
