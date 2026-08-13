@@ -15,7 +15,9 @@ export const collections = {
             updated: z.coerce.date(),
             tags: z.array(z.string()),
             img: z.string(),
-            img_alt: z.string().optional()
+            img_alt: z.string().optional(),
+            index: z.boolean().default(true),
+            comments: z.boolean().default(true)
         })
     })
 };
