@@ -14,8 +14,17 @@ interface Props {
 }
 
 const { title, description, image, imageAlt, noindex, canonical, markdown } = Astro.props;
+
+
+const buildDate = new Date().toLocaleString('en-US', {
+    dateStyle: 'long',
+    timeStyle: 'long',
+    timeZone: 'UTC',
+});
 ---
 
+<!DOCTYPE html>
+<Fragment set:html={`<!-- Last built on ${buildDate} with ${Astro.generator} -->`} />
 <html lang="en" itemscope itemtype="https://schema.org/Article">
     <head>
         <MainHead

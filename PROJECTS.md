@@ -7,8 +7,10 @@
 ## To Add
 
 - This website
+  - root
   - 404 page
-  - easter eggs?
+  - giscus
+  - easter eggs (vague)
 - Mom's b-day gift
 - Ethernet wiring
 - Propane shed + meter

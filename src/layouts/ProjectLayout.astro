@@ -31,7 +31,7 @@ const markdown = new URL(`/projects/${project.id}.md`, Astro.url).href;
                 <Hero title={project.data.title} align="start">
                     <div class="details">
                         <div class="tags">
-                            {project.data.tags.map((t) => <Pill>{t}</Pill>)}
+                            {project.data.tags.map((tag: string) => <Pill>{tag}</Pill>)}
                         </div>
                         <p class="description">{project.data.description}</p>
                     </div>
