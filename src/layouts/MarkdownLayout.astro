@@ -1,6 +1,7 @@
 ---
 import Hero from '../components/Hero.astro';
 import BaseLayout from './BaseLayout.astro';
+import Comments from '../components/Comments.astro';
 
 const { frontmatter } = Astro.props;
 ---
@@ -10,111 +11,93 @@ const { frontmatter } = Astro.props;
     description={frontmatter.description}
     image={frontmatter.img}
     imageAlt={frontmatter.img_alt}
+    noindex={frontmatter.noindex}
 >
-    <div class="stack gap-20">
-        <main class="wrapper article">
-            <Hero
-                title={frontmatter.title}
-                tagline={frontmatter.description}
-            >
-                {frontmatter.img && (
-                    <img
-                        width="1553"
-                        height="873"
-                        src={frontmatter.img}
-                        alt={frontmatter.img_alt}
-                    />
-                )}
-            </Hero>
-
-            <div class="content">
-                <slot />
+    <div class="stack gap-15">
+        <header>
+            <div class="wrapper stack gap-2">
+                <Hero
+                    title={frontmatter.title}
+                    tagline={frontmatter.description}
+                />
+            </div>
+        </header>
+        
+        <main class="wrapper">
+            <div class="stack gap-10 content">
+                { frontmatter.img && <img src={frontmatter.img} alt={frontmatter.img_alt || ''} /> }
+                <div class="markdown">
+                    <slot />
+                </div>
             </div>
         </main>
+
+        { frontmatter.comments && (
+            <section class="wrapper comments">
+                <Comments />
+            </section>
+        )}
     </div>
 </BaseLayout>
 
 <style>
-    .article {
-        display: flex;
-        flex-direction: column;
-        gap: 3.5rem;
-    }
-
-    img {
-        margin-top: 1.5rem;
-        border-radius: 1.5rem;
-        box-shadow: var(--shadow-md);
-    }
-
     .content {
         max-width: 65ch;
         margin-inline: auto;
-        width: 100%;
     }
 
-    .content > :global(* + *) {
+    .content > img {
+        margin-bottom: 1rem;
+    }
+
+    .markdown > :global(* + *) {
         margin-top: 1rem;
     }
 
-    .content :global(h1),
-    .content :global(h2),
-    .content :global(h3),
-    .content :global(h4),
-    .content :global(h5) {
-        margin: 1.5rem 0;
+    .markdown :global(h1),
+    .markdown :global(h2),
+    .markdown :global(h3),
+    .markdown :global(h4),
+    .markdown :global(h5),
+    .markdown :global(h6) {
+        margin-block: 1.5rem;
     }
 
-    .content :global(small) {
+    .markdown :global(small) {
         font-size: var(--text-xs);
     }
 
-    .content :global(img) {
-        border-radius: 1.5rem;
-        box-shadow: var(--shadow-sm);
-        background: var(--gradient-subtle);
+    .markdown :global(img),
+    .content > img {
         border: 1px solid var(--gray-800);
+        border-radius: 1.5rem;
+        background: var(--gradient-subtle);
+        box-shadow: var(--shadow-sm);
     }
 
-    .content :global(blockquote) {
-        font-size: var(--text-lg);
-        font-family: var(--font-brand);
-        font-weight: 600;
-        line-height: 1.1;
+    .markdown :global(blockquote) {
         padding-inline-start: 1.5rem;
         border-inline-start: 0.25rem solid var(--accent-dark);
         color: var(--gray-0);
+        font-family: var(--font-brand);
+        font-size: var(--text-lg);
+        font-weight: 600;
+        line-height: 1.1;
     }
 
-    .content :global(a) {
+    .markdown :global(a) {
         text-decoration: 1px solid underline transparent;
         text-underline-offset: 0.25em;
         transition: text-decoration-color var(--theme-transition);
     }
 
-    .content :global(a:hover),
-    .content :global(a:focus-visible) {
+    .markdown :global(a:hover),
+    .markdown :global(a:focus-visible) {
         text-decoration-color: currentColor;
     }
 
     @media (min-width: 50em) {
-        .article {
-            display: grid;
-            grid-template-columns: 1fr 60% 1fr;
-            row-gap: 3.5rem;
-        }
-
-        /* Hero matches About page sizing */
-        .article > :global(:first-child) {
-            grid-column-start: 2;
-        }
-
-        /* Markdown body centered underneath */
-        .content {
-            grid-column: 2;
-        }
-
-        .content :global(blockquote) {
+        .markdown :global(blockquote) {
             font-size: var(--text-2xl);
         }
     }

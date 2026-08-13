@@ -1,11 +1,14 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
 title: My Gear
+comments: false
 ---
 
 <!-- markdownlint-disable MD001 -->
 
-**This project page isn't yet completed&mdash;please come back later!**
+<!-- enable comments when done -->
+
+**This page isn't yet completed&mdash;please come back later!**
 
 Here's what I have so far:
 
