@@ -1,7 +1,6 @@
 ---
 import Icon from './Icon.astro';
 import { socials } from '../data/socials';
-import ThemeToggle from './ThemeToggle.astro';
 import Konami from './Konami.astro';
 
 const textLinks: { label: string; href: string }[] = [
@@ -84,10 +83,6 @@ const isCurrentPage = (href: string) => {
                         </a>
                     ))
                 }
-            </div>
-
-            <div class="theme-toggle">
-                <ThemeToggle />
             </div>
         </div>
     </div>
@@ -249,12 +244,6 @@ const isCurrentPage = (href: string) => {
         color: var(--accent-text-over);
     }
 
-    .theme-toggle {
-        display: flex;
-        align-items: center;
-        height: calc(var(--icon-size) + 2 * var(--icon-padding));
-    }
-
     @media (min-width: 50em) {
         nav {
             display: grid;
@@ -344,8 +333,7 @@ const isCurrentPage = (href: string) => {
     }
 
     @media print {
-        .menu-button,
-        .theme-toggle {
+        .menu-button {
             display: none;
         }
 

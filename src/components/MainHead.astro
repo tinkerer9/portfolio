@@ -84,47 +84,6 @@ const jsonLdString = JSON.stringify(schema);
 <link rel="preload" href="/fonts/rubik-600.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/public-sans-400.woff2" as="font" type="font/woff2" crossorigin />
 
-<!-- Theme Preferences -->
-<script is:inline> // is:inline so this runs ASAP (otherwise there will be an initial "flicker")
-    const storedTheme = localStorage.getItem('theme');
-    const documentElement = document.documentElement;
-
-    const isDark = storedTheme === 'dark';
-
-    documentElement.classList.toggle('theme-dark', isDark);
-
-    let printing = false;
-    let wasDark = false; // set to correct value in 'beforeprint'
-
-    const observer = new MutationObserver(() => {
-        if (printing) return;
-
-        localStorage.setItem(
-            'theme',
-            documentElement.classList.contains('theme-dark') ? 'dark' : 'light',
-        );
-    });
-
-    observer.observe(documentElement, {
-        attributes: true,
-        attributeFilter: ['class'],
-    });
-
-    window.addEventListener('beforeprint', () => {
-        printing = true;
-        wasDark = documentElement.classList.contains('theme-dark');
-        documentElement.classList.add('printing');
-        documentElement.classList.remove('theme-dark');
-        
-    });
-
-    window.addEventListener('afterprint', () => {
-        if (wasDark) documentElement.classList.add('theme-dark');
-        documentElement.classList.remove('printing');
-        printing = false;
-    });
-</script>
-
 <!-- JSON-LD Schema -->
 <script type="application/ld+json" set:html={jsonLdString} />
 
