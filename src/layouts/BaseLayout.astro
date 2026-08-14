@@ -51,34 +51,34 @@ const buildDate = new Date().toLocaleString('en-US', {
 
         <style>
             :root {
-                --_placeholder-bg: linear-gradient(transparent, transparent);
-                --bg-image-main: url('/assets/backgrounds/bg-main-light-800w.jpg');
-                --bg-image-main-curves: url('/assets/backgrounds/bg-main-light.svg');
-                --bg-image-subtle-1: var(--_placeholder-bg);
-                --bg-image-subtle-2: var(--_placeholder-bg);
-                --bg-image-footer: var(--_placeholder-bg);
+                --bg-placeholder: linear-gradient(transparent, transparent);
+                --bg-main: url('/assets/backgrounds/main-800w.jpg');
+                --bg-main-curves: url('/assets/backgrounds/main.svg');
+                --bg-subtle-1: var(--bg-placeholder);
+                --bg-subtle-2: var(--bg-placeholder);
+                --bg-footer: var(--bg-placeholder);
                 --bg-svg-blend-mode: overlay;
                 --bg-blend-mode: darken;
-                --bg-image-aspect-ratio: 2.25;
+                --bg-aspect-ratio: 2.25;
                 --bg-scale: 1.68;
-                --bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
+                --bg-aspect-ratio: calc(var(--bg-aspect-ratio) / var(--bg-scale));
                 --bg-gradient-size: calc(var(--bg-scale) * 100%);
             }
             :root.loaded {
-                --bg-image-subtle-1: url('/assets/backgrounds/bg-subtle-1-light-800w.jpg');
-                --bg-image-subtle-2: url('/assets/backgrounds/bg-subtle-2-light-800w.jpg');
-                --bg-image-footer: url('/assets/backgrounds/bg-footer-light-800w.jpg');
+                --bg-subtle-1: url('/assets/backgrounds/subtle-1-800w.jpg');
+                --bg-subtle-2: url('/assets/backgrounds/subtle-2-800w.jpg');
+                --bg-image-footer: url('/assets/backgrounds/footer-800w.jpg');
             }
 
             @media (min-width: 50em) {
                 :root {
                     --bg-scale: 1;
-                    --bg-image-main: url('/assets/backgrounds/bg-main-light-1440w.jpg');
+                    --bg-main: url('/assets/backgrounds/main-1440w.jpg');
                 }
                 :root.loaded {
-                    --bg-image-subtle-1: url('/assets/backgrounds/bg-subtle-1-light-1440w.jpg');
-                    --bg-image-subtle-2: url('/assets/backgrounds/bg-subtle-2-light-1440w.jpg');
-                    --bg-image-footer: url('/assets/backgrounds/bg-footer-light-1440w.jpg');
+                    --bg-subtle-1: url('/assets/backgrounds/subtle-1-1440w.jpg');
+                    --bg-subtle-2: url('/assets/backgrounds/subtle-2-1440w.jpg');
+                    --bg-footer: url('/assets/backgrounds/footer-1440w.jpg');
                 }
             }
 
@@ -86,9 +86,9 @@ const buildDate = new Date().toLocaleString('en-US', {
                 min-height: 100%;
                 isolation: isolate;
                 background:
-                    /*footer*/ var(--bg-image-footer) bottom center/var(--bg-gradient-size) no-repeat,
-                    /*header1*/ var(--bg-image-main-curves) top center/var(--bg-gradient-size) no-repeat,
-                    /*header2*/ var(--bg-image-main) top center/var(--bg-gradient-size) no-repeat,
+                    /*footer*/ var(--bg-footer) bottom center/var(--bg-gradient-size) no-repeat,
+                    /*header1*/ var(--bg-main-curves) top center/var(--bg-gradient-size) no-repeat,
+                    /*header2*/ var(--bg-main) top center/var(--bg-gradient-size) no-repeat,
                     /*base*/ var(--gray-999);
                 background-blend-mode:
                     /*footer*/ var(--bg-blend-mode),
