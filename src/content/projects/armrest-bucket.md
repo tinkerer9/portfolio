@@ -1,7 +1,7 @@
 ---
 title: Polestar Armrest Bucket
 date: 2025-03-19
-updated: 2026-07-30
+updated: 2026-08-13
 img: /assets/projects/armrest-bucket/colored.jpg
 img_alt: An armrest bucket for a Polestar 3 in colored light
 description: >-
@@ -47,9 +47,9 @@ I found a [model online](https://cults3d.com/en/3d-model/gadget/polestar-3-armre
 The model would have costed $7.89 to buy, which wasn't too bad, but I knew I'd rather custom model it instead of buying a model online.
 I have experience 3D modeling, so I measured the hole and printed my first prototype.
 
-<!-- Insert V1 image here... -->
-
 ### Version 1
+
+![The first version of a 3D-printed bucket](/assets/projects/armrest-bucket/v1.jpg)
 
 The prototype had some issues&mdash;such as not fitting&mdash;but I knew that would happen.
 That's why I only printed the top inch of the bucket.
@@ -64,8 +64,6 @@ Iteration then called for the solving of these problems.
 I modified my 3D model by rounding the edges and adding a lip that would allow for easy removal.
 With these changes, Version 2 was born.
 
-<!-- Insert V2 image here... -->
-
 ### Version 2
 
 Once the 3D printed had finished, I eagerly rushed to the car and inserted the bucket.
@@ -79,9 +77,9 @@ The "sharp" corners kept the bucket from sitting flush.
 Again, following the iterative process, I focused on fixing these issues.
 I made the bucket a bit wider and rounded the corners, ready to test Version 3.
 
-<!-- Insert V3 image here... -->
-
 ### Version 3
+
+![The third version of a 3D-printed bucket](/assets/projects/armrest-bucket/v3.jpg)
 
 Just like my first and second versions, I only printed the top inch of the bucket.
 I knew that even Version 3 wouldn't be my last.
@@ -102,9 +100,9 @@ It didn't look pretty, but **it worked**!
 
 The bucket fit perfectly&mdash;prototyping was done.
 
-![The final Polestar 3 Armrest Bucket](/assets/projects/armrest-bucket/final.jpg)
-
 ### The Final Armrest Bucket
+
+![The final Polestar 3 Armrest Bucket](/assets/projects/armrest-bucket/final.jpg)
 
 This time, I didn't print just the top half of the bucket with scrap PLA.
 I printed the whole thing out of [PETG HF](https://us.store.bambulab.com/products/petg-hf).
