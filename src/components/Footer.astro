@@ -8,7 +8,7 @@ const year = new Date().getFullYear();
     <div class="group">
         <p>&copy; {year} Max Parisi</p>
     </div>
-    <p class="socials">
+    <p class="links">
         <a href="/about">About</a>
         <a href="mailto:max@maxparisi.me">Contact</a>
         {
@@ -51,7 +51,7 @@ const year = new Date().getFullYear();
         gap: 0.5rem;
     }
 
-    .socials {
+    .links {
         display: flex;
         justify-content: center;
         gap: 1rem;
@@ -71,8 +71,14 @@ const year = new Date().getFullYear();
             flex-wrap: wrap;
         }
 
-        .socials {
+        .links {
             justify-content: flex-end;
+        }
+    }
+
+    @media print {
+        .links {
+            display: none;
         }
     }
 </style>
