@@ -1,5 +1,7 @@
 # Todo List
 
+- Use Astro's font tooling instead of in `public/fonts`
+  - *<https://docs.astro.build/en/reference/configuration-reference/#fonts>*
 - Add more projects (see `PROJECTS.md`)
 - Add "external" icon to external links?
 - Finish `/about/athetics` and `/about/volunteering`
