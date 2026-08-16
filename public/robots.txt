@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maxparisi.me/sitemap-index.xml
+Sitemap: https://maxparisi.me/sitemap.xml
