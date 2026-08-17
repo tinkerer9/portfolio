@@ -1,15 +1,4 @@
----
-const {
-    duration = 1000,
-    rotation = 360,
-} = Astro.props;
----
-
-<div
-    class="konami-container"
-    data-duration={duration}
-    data-rotation={rotation}
->
+<div class="konami-container">
     <slot />
 </div>
 
@@ -43,16 +32,13 @@ const {
             if (position === KONAMI.length) {
                 position = 0;
 
-                const rotation = container?.dataset.rotation ?? '360'; // as string
-                const duration = Number(container?.dataset.duration ?? 1000); // as number
-
                 container?.animate(
                     [
-                        { transform: 'rotate(0deg)' },
-                        { transform: `rotate(${rotation}deg)` }
+                        { transform: "rotate(0deg)" },
+                        { transform: "rotate(360deg)" }
                     ],
                     {
-                        duration,
+                        duration: 1000,
                         easing: 'ease-in-out',
                     }
                 );
