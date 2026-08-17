@@ -39,7 +39,6 @@
     font-display: swap;
 }
 
-
 /* Global variables */
 :root {
     /* Colors */
@@ -124,13 +123,6 @@ html,
 body {
     min-height: 100%;
     overflow-x: hidden;
-}
-
-html.printing *,
-html.printing *::before,
-html.printing *::after {
-    transition: none !important;
-    animation: none !important;
 }
 
 body {
