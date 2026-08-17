@@ -1,11 +1,10 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-
+import BaseLayout from './BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
-import BaseLayout from './BaseLayout.astro';
 import Comments from '../components/Comments.astro';
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
     project: CollectionEntry<'projects'>;

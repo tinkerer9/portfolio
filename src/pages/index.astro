@@ -1,14 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import Project from '../components/Project.astro';
-import Skills from '../components/Skills.astro';
-import MoreLink from '../components/MoreLink.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Pill from '../components/Pill.astro';
+import Icon from '../components/Icon.astro';
+import MoreLink from '../components/MoreLink.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Skills from '../components/Skills.astro';
+import Grid from '../components/Grid.astro';
+import Project from '../components/Project.astro';
+import { getCollection } from 'astro:content';
 
 const projects = (await getCollection('projects'))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
