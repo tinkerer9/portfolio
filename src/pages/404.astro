@@ -73,9 +73,7 @@ const normalizedPages = pages.map((page) => ({
     const suggestion = normalizedPages.reduce((best, page) => {
         const score = levenshtein(currentPath, page.normalized);
 
-        if (!best || score < best.score) {
-            return { page, score };
-        }
+        if (!best || score < best.score) return { page, score };
 
         return best;
     }, null)?.page;
