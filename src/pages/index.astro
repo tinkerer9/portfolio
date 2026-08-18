@@ -10,13 +10,9 @@ import Grid from '../components/Grid.astro';
 import Project from '../components/Project.astro';
 import { getCollection } from 'astro:content';
 
-const allProjects = await getCollection('projects');
-
-const projects = allProjects
+const projects = (await getCollection('projects'))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
     .slice(0, 4);
-
-const remainingProjects = allProjects.length - projects.length;
 ---
 
 <BaseLayout 
@@ -77,11 +73,6 @@ const remainingProjects = allProjects.length - projects.length;
                                     <Project project={project} />
                                 </li>
                             ))
-                        }
-                        { remainingProjects > 0 &&
-                            <li>
-                                <MoreLink href="/projects">{remainingProjects} more {remainingProjects === 1 ? "project" : "projects"}</MoreLink>
-                            </li>
                         }
                     </Grid>
                 </div>
