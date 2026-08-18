@@ -1,9 +1,3 @@
-/*
- * exports an array of pages
- * automatically adds collections
- * includes path and title
- */
-
 import { getCollection } from "astro:content";
 
 type Page = {
