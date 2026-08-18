@@ -82,6 +82,7 @@ const markdown = new URL(`/projects/${project.id}.md`, Astro.url).href;
     .description {
         max-width: 54ch;
         font-size: var(--text-lg);
+        text-wrap: balance;
     }
 
     .content {
