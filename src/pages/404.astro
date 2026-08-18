@@ -35,7 +35,7 @@ const normalizedPages = pages.map((page) => ({
     const link = document.querySelector('#link');
 
     function normalize(path) {
-        try { // decodeURIComponent could throw an error
+        try {
             path = decodeURIComponent(path);
         } catch {}
 
