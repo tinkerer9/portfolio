@@ -23,7 +23,8 @@ export async function GET(context: { site: URL }) {
             )
         : new Date();
 
-    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+    const xml = `\
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Max Parisi's Projects</title>
@@ -44,7 +45,8 @@ export async function GET(context: { site: URL }) {
     <ttl>60</ttl>
 ${projects
     .map(
-        (project) => `    <item>
+        (project) => `\
+    <item>
       <title>${escapeXml(project.data.title)}</title>
       <link>${escapeXml(`${site}/projects/${project.id}`)}</link>
       <guid isPermaLink="true">${escapeXml(`${site}/projects/${project.id}`)}</guid>
