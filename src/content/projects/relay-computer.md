@@ -1,7 +1,7 @@
 ---
 title: Relay Computer
 date: 2026-05-18
-updated: 2026-08-12
+updated: 2026-08-20
 img: /assets/projects/relay-computer/pcb.jpg
 img_alt: A green printed circuit board for a relay computer
 description: >-
@@ -151,7 +151,7 @@ The user would then decode the binary output back in to decimal, and that would 
 [Merriam-Webster](https://www.merriam-webster.com/dictionary/computer) defines a **computer** as *a programmable usually electronic device that can store, retrieve, and process data*.
 Is my relay computer actually a *computer*?
 
-This definition has for requirements:
+This definition has four requirements:
 
 - the computer must be **programmable**
 - the computer must be able to **store data**
