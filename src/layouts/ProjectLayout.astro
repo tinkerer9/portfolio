@@ -4,7 +4,7 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import Comments from '../components/Comments.astro';
-import type { CollectionEntry } from 'astro:content';
+import { type CollectionEntry, render } from 'astro:content';
 
 interface Props {
     project: CollectionEntry<'projects'>;
@@ -13,6 +13,8 @@ interface Props {
 const { project } = Astro.props;
 
 const markdown = new URL(`/projects/${project.id}.md`, Astro.url).href;
+
+const { Content } = await render(project);
 ---
 
 <BaseLayout
@@ -42,7 +44,7 @@ const markdown = new URL(`/projects/${project.id}.md`, Astro.url).href;
             <div class="stack gap-10 content">
                 <img src={project.data.img} alt={project.data.img_alt || ''} />
                 <div class="markdown">
-                    <slot />
+                    <Content />
                 </div>
             </div>
         </main>

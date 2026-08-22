@@ -148,7 +148,7 @@ The user would then decode the binary output back in to decimal, and that would 
 
 ### Validity
 
-[Merriam-Webster](https://www.merriam-webster.com/dictionary/computer) defines a **computer** as *a programmable usually electronic device that can store, retrieve, and process data*.
+[Merriam-Webster](https://www.merriam-webster.com/dictionary/computer) defines a **computer** as *"a programmable usually electronic device that can store, retrieve, and process data."*
 Is my relay computer actually a *computer*?
 
 This definition has four requirements:
