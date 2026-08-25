@@ -25,7 +25,7 @@ const { frontmatter } = Astro.props;
         
         <main class="wrapper">
             <div class="stack gap-10 content">
-                { frontmatter.img && <img src={frontmatter.img} alt={frontmatter.img_alt || ''} /> }
+                { frontmatter.image && <img src={frontmatter.image.path} alt={frontmatter.image.alt || ''} /> }
                 <div class="markdown">
                     <slot />
                 </div>

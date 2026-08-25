@@ -1,12 +1,13 @@
 ---
 title: My Portfolio
-date: 2026-07-04
-updated: 2026-08-18
-img: /assets/projects/portfolio/homepage.jpg
-img_alt: A screenshot of maxparisi.me, my portfolio.
 description: >-
   I was jealous of all the other Max Parisi's on Google.
   So I made a website to show that I exist, too.
+date: 2026-07-04
+updated: 2026-08-24
+image:
+  path: /assets/projects/portfolio/homepage.jpg
+  alt: A screenshot of maxparisi.me, my portfolio.
 tags:
   - Web Development
   - Astro

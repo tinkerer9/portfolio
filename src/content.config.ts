@@ -14,8 +14,10 @@ export const collections = {
             date: z.coerce.date(),
             updated: z.coerce.date(),
             tags: z.array(z.string()),
-            img: z.string(),
-            img_alt: z.string().optional(),
+            image: z.object({
+                path: z.string(),
+                alt: z.string().optional()
+            }),
             noindex: z.boolean().default(false),
             comments: z.boolean().default(true)
         })

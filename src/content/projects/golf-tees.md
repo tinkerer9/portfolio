@@ -1,12 +1,13 @@
 ---
 title: Flat Golf Tees
-date: 2025-09-17
-updated: 2026-07-30
-img: /assets/projects/golf-tees/printing.jpg
-img_alt: A 3D printer printing blue flat golf tees
 description: >-
   I custom-designed and 3D-printed 110 flat golf tees for a friend.
   Cheaper than buying ones? No. Does it matter? Also no.
+date: 2025-09-17
+updated: 2026-08-24
+image:
+  path: /assets/projects/golf-tees/printing.jpg
+  alt: A 3D printer printing blue flat golf tees
 tags:
   - 3D Design
   - 3D Printing

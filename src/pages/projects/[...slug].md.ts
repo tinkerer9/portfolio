@@ -40,7 +40,7 @@ export async function GET({ props, url }: { props: Props; url: URL }) {
 
 ${project.data.description}
 
-![${project.data.img_alt ?? ''}](${new URL(project.data.img, site).href})
+![${project.data.image.alt ?? ''}](${new URL(project.data.image.path, site).href})
 
 ${body}
 `;

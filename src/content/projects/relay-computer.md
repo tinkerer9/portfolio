@@ -1,12 +1,13 @@
 ---
 title: Relay Computer
-date: 2026-05-18
-updated: 2026-08-20
-img: /assets/projects/relay-computer/pcb.jpg
-img_alt: A green printed circuit board for a relay computer
 description: >-
   I designed and made a relay computer that adds or subtracts two 4-bit binary numbers from scratch.
   Practical? No. Fun? Absolutely.
+date: 2026-05-18
+updated: 2026-08-24
+image:
+  path: /assets/projects/relay-computer/pcb.jpg
+  alt: A green printed circuit board for a relay computer
 tags:
   - Design
   - Electronics

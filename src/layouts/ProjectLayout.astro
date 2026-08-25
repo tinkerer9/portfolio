@@ -20,8 +20,8 @@ const { Content } = await render(project);
 <BaseLayout
     title={`${project.data.title} | Max Parisi`}
     description={project.data.description}
-    image={project.data.img}
-    imageAlt={project.data.img_alt}
+    image={project.data.image.path}
+    imageAlt={project.data.image.alt}
     markdown={markdown}
     noindex={project.data.noindex}
 >
@@ -32,7 +32,11 @@ const { Content } = await render(project);
                 <Hero title={project.data.title} align="start">
                     <div class="details">
                         <div class="tags">
-                            {project.data.tags.map((tag: string) => <Pill>{tag}</Pill>)}
+                            {
+                                project.data.tags.map((tag: string) => (
+                                    <Pill>{tag}</Pill>
+                                ))
+                            }
                         </div>
                         <p class="description">{project.data.description}</p>
                     </div>
@@ -42,7 +46,7 @@ const { Content } = await render(project);
         
         <main class="wrapper">
             <div class="stack gap-10 content">
-                <img src={project.data.img} alt={project.data.img_alt || ''} />
+                <img src={project.data.image.path} alt={project.data.image.alt || ''} />
                 <div class="markdown">
                     <Content />
                 </div>

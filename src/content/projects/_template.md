@@ -1,12 +1,13 @@
 ---
 title: Project Template
-date: YYYY-MM-DD
-updated: YYYY-MM-DD
-img: /assets/projects/myproject/image.jpg
-img_alt: A description for the hero image
 description: >-
   A catchy description for the project.
   Use this to hook readers in.
+date: YYYY-MM-DD
+updated: YYYY-MM-DD
+image:
+  path: /assets/projects/myproject/image.jpg
+  alt: A description for the hero image
 tags:
   - One-Word
   - Keywords
