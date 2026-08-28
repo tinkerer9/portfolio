@@ -54,9 +54,9 @@ ${projects
       <description>${escapeXml(project.data.description)}</description>
 ${project.data.tags.map((tag) => `      <category>${escapeXml(tag)}</category>`).join("\n")}
       <dc:creator>Max Parisi</dc:creator>
-      <media:content url="${escapeXml(`${site}${project.data.img}`)}" medium="image">
+      <media:content url="${escapeXml(`${site}${project.data.image.path}`)}" medium="image">
         <media:title>${escapeXml(project.data.title)}</media:title>
-${project.data.img_alt ? `        <media:description type="plain">${escapeXml(project.data.img_alt)}</media:description>` : ""}
+${project.data.image.alt ? `        <media:description type="plain">${escapeXml(project.data.image.alt)}</media:description>` : ""}
       </media:content>
     </item>`
     )
