@@ -36,7 +36,8 @@ export async function GET({ props, url }: { props: Props; url: URL }) {
         // keep newline spacing clean:
         .replace(/\n{3,}/g, '\n\n');
     
-    const markdown = `# ${project.data.title}
+    const markdown = `\
+# ${project.data.title}
 
 ${project.data.description}
 
