@@ -5,6 +5,14 @@ This is the source code for my personal portfolio&mdash;check it out at [**maxpa
 It's built on [Astro](https://astro.build) and uses a [Cloudflare Worker](https://developers.cloudflare.com/workers/) for hosting on my domain.
 It was based on the Astro [Portfolio Theme](https://astro.build/themes/details/portfolio), though significantly modified.
 
+<!-- markdownlint-disable MD033 -->
+<div align="center">
+  <a href="https://maxparisi.me">
+    <img src="public/assets/screenshot.jpg" width="100%" alt="Portfolio homepage screenshot">
+  </a>
+</div>
+<!-- markdownlint-enable MD033 -->
+
 ## Pages
 
 My portfolio has various pages; here are a few:
