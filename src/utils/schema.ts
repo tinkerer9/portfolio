@@ -57,9 +57,8 @@ export function getSchema({
                 "publisher": { "@id": "https://maxparisi.me/#person" }
             },
 
-            ...(!isHome ? [webPage] : []),
-
-            ...(isProject ? [project] : [])
+            ...(!isHome ? [ webPage ] : []),
+            ...(isProject ? [ project ] : [])
         ]
     };
 }
