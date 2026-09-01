@@ -9,8 +9,8 @@ const { frontmatter } = Astro.props;
 <BaseLayout
     title={`${frontmatter.title} | Max Parisi`}
     description={frontmatter.description}
-    image={frontmatter.image.path}
-    imageAlt={frontmatter.image.alt}
+    image={frontmatter.image?.path}
+    imageAlt={frontmatter.image?.alt}
     noindex={frontmatter.noindex}
 >
     <div class="stack gap-15">

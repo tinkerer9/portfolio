@@ -20,8 +20,8 @@ const { Content } = await render(project);
 <BaseLayout
     title={`${project.data.title} | Max Parisi`}
     description={project.data.description}
-    image={project.data.image.path}
-    imageAlt={project.data.image.alt}
+    image={project.data.image?.path}
+    imageAlt={project.data.image?.alt}
     markdown={markdown}
     noindex={project.data.noindex}
 >
