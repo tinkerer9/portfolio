@@ -6,7 +6,7 @@ export const collections = {
     projects: defineCollection({
         loader: glob({
             base: './src/content/projects',
-            pattern: ['**/*.md', '!**/_*/**', '!**/_*.md']
+            pattern: [ '**/*.md', '!**/_*/**', '!**/_*.md' ]
         }),
         schema: z.object({
             title: z.string(),
