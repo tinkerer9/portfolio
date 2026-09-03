@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "npm run build && wrangler dev",
     "astro": "astro",
-    "generate-types": "wrangler types",
+    "types": "wrangler types && astro sync",
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
