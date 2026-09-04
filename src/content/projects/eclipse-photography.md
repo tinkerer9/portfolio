@@ -55,7 +55,7 @@ See it?
 That blue shape was what the sun looked like that day.
 Isn't that cool?
 
-### The Next Eclipse
+## The Next Eclipse
 
 Usually, partial solar eclipses only happen every **2&ndash;3 years**.
 But, somehow, one happened only six months later.
@@ -100,7 +100,7 @@ Although I wasn't in Texas, where the total eclipse was, I was amazed by the sig
 I knew that would be a once-in-a-lifetime sight and I was incredibly proud with the results.
 Okay, there will be another [partial solar eclipse](https://www.timeanddate.com/eclipse/solar/2029-january-14) in **2029**, and I'll make sure to get photos of that too.
 
-### Reflection
+## Reflection
 
 From my first solar eclipse in October 2023 to my second six months later, I learned not only **not** how to take a photo of an eclipse, but also **patience, creativity, and appreciation for nature**.
 

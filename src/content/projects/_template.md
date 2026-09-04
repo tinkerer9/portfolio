@@ -23,21 +23,21 @@ Respond to the blockquote here.
 Add more of an overview here.
 Use single line breaks between sentences in a paragraph.
 
-### Top-Level Header
+## Top-Level Header
 
-Use an h3 header for the top-level.
-Do not use an h1 or h2 header.
+Use an h2 header for the top-level.
+Do not use an h1 header.
 
-#### Subheading
+### Subheading
 
 Use an h4 header inside an h3 heading.
 Continue this down to h6.
 
-### Formatting
+## Formatting
 
 Follow usual GFM synax for formatting.
 
-### Reflection
+## Reflection
 
 Always end with "Reflection" or "What I Learned" and write a short paragraph so viewers can tell what came out of the project.
 

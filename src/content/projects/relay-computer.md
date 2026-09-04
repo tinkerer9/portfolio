@@ -26,7 +26,7 @@ It's not much of a *"computer,"* and I definitely didn't create it from nothing.
 
 But for all intents and purposes, I'll call it a **computer**.
 
-### Context
+## Context
 
 Where did I get the idea to build a computer?
 Great question.
@@ -42,7 +42,7 @@ I had plenty of ideas, but with my interests in computers, math, and electronics
 A **relay computer** is a computing device that uses electromechanical relays to make binary calculations using logic gates.
 I built one.
 
-### Research
+## Research
 
 The first step of a Capstone Project is **research**.
 
@@ -54,14 +54,14 @@ I learned how to connect relays together to make an [**Full Adder**](https://www
 <!-- markdownlint-disable-next-line MD033 -->
 <small>**Image Credit:** [Jeroen Brinkman](https://www.relaiscomputer.nl)</small>
 
-### Design
+## Design
 
 I knew I wanted to make a custom **printed circuit board** (PCB) for this.
 
 I opened up [KiCad](https://www.kicad.org/), an open-source PCB design program, and created a new project, and started with a **schematic**.
 I connected all **20 relays**, **33 LEDs**, **9 switches**, and a few other components to each other.
 
-#### Testing
+### Testing
 
 How would I know that the relay computer would actually work?
 
@@ -70,7 +70,7 @@ I would draw a line for power coming out of the switch, into the relay, through 
 
 After testing many equations, both addtion and subtraction, and comparing the binary output to what I calculated in my head, **it worked**!
 
-#### Circuit Board
+### Circuit Board
 
 ![A printed circuit board in KiCad on a laptop](/assets/projects/relay-computer/kicad.jpg)
 
@@ -84,7 +84,7 @@ I connected the resistors, LEDs, and relays to each other in each "block."
 Then, I connected each block to each other.
 I connected the input switches and output LEDs to each other, finishing the circuit board.
 
-### Soldering
+## Soldering
 
 I sent off my PCB Gerber files to [JLCPCB](https://jlcpcb.com/), and after a ridiculous shipping fee, it arrived.
 Time to get components!
@@ -133,7 +133,7 @@ I had finished making the world's most inconvenient calculator.
 
 ![Twenty relays attached to a circuit board](/assets/projects/relay-computer/relays.jpg)
 
-### Usage
+## Usage
 
 My relay computer takes **two 4-bit inputs** (0&ndash;15) and outputs the **sum or difference** of the two numbers.
 
@@ -147,7 +147,7 @@ The user would then decode the binary output back in to decimal, and that would 
 *For example, if subtracting 11 from 4, `1001` would show, which decodes to 9.*
 *After subtracting 16 from 9, the answer, **-7**, would show.)*
 
-### Validity
+## Validity
 
 [Merriam-Webster](https://www.merriam-webster.com/dictionary/computer) defines a **computer** as *"a programmable usually electronic device that can store, retrieve, and process data."*
 Is my relay computer actually a *computer*?
@@ -164,7 +164,7 @@ It's just a calculator, meaning that it **can** process data, but it can't do an
 
 *(my relay computer also isn't [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness)&mdash;welps!)*
 
-### Reflection
+## Reflection
 
 This project taught me a lot&mdash;from logic gates and Boolean algebra to PCB design and research.
 In the future, I will use what I've learned for better understanding of low-level programming and future electronics projects.

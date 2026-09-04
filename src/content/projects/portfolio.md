@@ -20,7 +20,7 @@ tags:
 
 That's when I purchased the domain **maxparisi.me**.
 
-### Domain Registration
+## Domain Registration
 
 When I had the idea of making a website, I wanted a domain name that reflected me.
 I could use something like my [GitHub](/github) username, `tinkerer9`, but coding isn't everything I do.
@@ -31,7 +31,7 @@ Usernames wouldn't cut it, so I knew I needed to use my name.
 One issue: [`maxparisi.com`](https://maxparisi.com) was already taken.
 I couldn't use that.
 
-#### TLDs
+### TLDs
 
 A top-level domains, otherwise known as a TLD, is the last part of the domain name.
 Examples of generic TLDS (gTLDs) are `.com` and `.org`, but there are also TLDs based on country-codes (ccTLDs), such as `.us` and `.uk`.
@@ -57,7 +57,7 @@ In fact, I'm considering transfering my domain registration for [Cloudflare's Re
 <!-- markdownlint-disable-next-line MD033 -->
 <small>I'm not sponsored by Cloudflare at all, I think that they're just great!</small>
 
-### Web Framework
+## Web Framework
 
 ![A screenshot of source code being written in VS Code](/assets/projects/portfolio/vs-code.jpg)
 
@@ -73,14 +73,14 @@ I can also write in Markdown, which I do for every project page including [this 
 Want to check out the source code behind this?
 Check out my [GitHub repository](/github/portfolio)!
 
-### Content Collections
+## Content Collections
 
 Astro supports [Content Collections](https://docs.astro.build/en/guides/content-collections/), which allow me to write [markdown files](/github/portfolio/blob/main/src/content/projects) for each project I've made, and then to use a [Dynamic Route](https://docs.astro.build/en/guides/routing/#dynamic-routes) to generate an HTML file for each project on build.
 
 I've used this for generating an Astro file, [`projects/[...slug].astro`](/github/portfolio/blob/main/src/pages/projects/[...slug].astro), which compiles to HTML.
 I also used a dynamic route for a Markdown file, [`projects/[...slug].md.ts`](/github/portfolio/blob/main/src/pages/projects/[...slug].md.ts) which helps LLMs read my content more easily.
 
-### Redirects
+## Redirects
 
 Cloudflare Workers supports adding a [`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) file, which I can use for sharing short links instead of long ones.
 
@@ -93,12 +93,12 @@ That's a long link, so I can also share `maxparisi.me/sports`, which redirects t
 
 Check out my `_redirects` file at [maxparisi.me/redirects](/redirects)!
 
-### Icons
+## Icons
 
 For icons, I'm using the [Phosphor Icons](https://phosphoricons.com/), an [open-source](https://github.com/phosphor-icons) icon family.
 I made an [`<Icon />`](/github/portfolio/blob/main/src/components/Icon.astro) Astro component that pulls SVG from a [`icons.ts`](/github/portfolio/blob/main/src/data/icons.ts) object.
 
-### Commenting
+## Commenting
 
 I wanted my readers to be able to comment on my projects, but creating a whole backend database, authentication system, and user interface would be tricky.
 But what if someone already did that for me?
@@ -110,14 +110,14 @@ Because it is based on GitHub Discussions, I can moderate and remove comments th
 
 Try it out at the bottom of this page!
 
-### Easter Eggs
+## Easter Eggs
 
 I have (at least) two easter eggs hidden on my website&mdash;they work on any page, so they shouldn't be too find to hard.
 If you want a challenge, try to find them without looking at any source code&mdash;not even the HTML!
 
 Because they're supposed to be secret, I'm not going to share them here, but feel free to comment below if you find them!
 
-### 404 Page
+## 404 Page
 
 Have you ever clicked a link and gotten a `404` error?
 I sure have.
@@ -144,7 +144,7 @@ Try it out!
 Say you typed in the link to my about page, but accidentally switched the `o` and the `u`.
 Visit [maxparisi.me/abuot](https://maxparisi.me/abuot), and see the algorithm recommend the "About Me" page instead.
 
-### What I Learned
+## What I Learned
 
 One year ago, I would not know how to make a website.
 Sure, I knew how to program in HTML and how to serve it on Node.js, but not how to use a web framework and serve it across the world.

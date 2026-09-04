@@ -29,8 +29,6 @@ export async function GET({ props, url }: { props: { project: Project }; url: UR
         )
         // remove comments:
         .replace(/^\s*<!--[\s\S]*?-->\s*\n?/gm, '')
-        // shift headers:
-        .replace(/^(#{2,6})\s/gm, (_: string, hashes: string) => `${hashes.slice(1)} `)
         // keep newline spacing clean:
         .replace(/\n{3,}/g, '\n\n');
     

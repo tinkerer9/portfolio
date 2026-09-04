@@ -22,7 +22,7 @@ tags:
 **August 30, 2025**.
 That's when I got this text from my friend's dad.
 
-### Context
+## Context
 
 Okay, that message might not give you much information.
 
@@ -36,7 +36,7 @@ To be honest, maybe he should have just bought the original Flat-Tees instead of
 
 Back to the story&mdash;I started my first revision.
 
-### Revision 1
+## Revision 1
 
 I opened the software I use for 3D design is [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/overview), and created a new file: `flat-tees.f3d`.
 With one of the original Flat-Tees for reference, I meticulously measured each and every dimension.
@@ -62,7 +62,7 @@ I texted my friend's dad a picture of my creation:
 I agreed&mdash;this was called "Revison 1" for a reason.
 It was time to try again.
 
-### Revision 2
+## Revision 2
 
 Instead of using the same model for my changes, I decided to start from scratch.
 
@@ -81,6 +81,6 @@ My friend's dad asked for **110 golf tees total** for a competition at a local g
 
 ![110 flat golf tees laid out on a table](/assets/projects/golf-tees/all.jpg)
 
-### Reflection
+## Reflection
 
 This project taught me a lot&mdash;from how to design and manufacture custom parts for a "client," how to iterate through multiple prototypes, and how to (legally) infringe on a inventor's product.

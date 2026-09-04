@@ -26,7 +26,7 @@ the car had a bug where it would only open through the app (this was disastrous 
 and the infotainment system often froze up.
 These problems were all solved with software updates.
 
-### The Problem
+## The Problem
 
 But there was one flaw that couldn't be solved with an OTA update.
 The center console storage area was extremely deep.
@@ -48,7 +48,7 @@ I found a [model online](https://cults3d.com/en/3d-model/gadget/polestar-3-armre
 The model would have costed $7.89 to buy, which wasn't too bad, but I knew I'd rather custom model it instead of buying a model online.
 I have experience 3D modeling, so I measured the hole and printed my first prototype.
 
-### Version 1
+## Version 1
 
 ![The first version of a 3D-printed bucket](/assets/projects/armrest-bucket/v1.jpg)
 
@@ -65,7 +65,7 @@ Iteration then called for the solving of these problems.
 I modified my 3D model by rounding the edges and adding a lip that would allow for easy removal.
 With these changes, Version 2 was born.
 
-### Version 2
+## Version 2
 
 Once the 3D printed had finished, I eagerly rushed to the car and inserted the bucket.
 Version 2 was a big improvement&mdash;it actually fit this time!
@@ -78,7 +78,7 @@ The "sharp" corners kept the bucket from sitting flush.
 Again, following the iterative process, I focused on fixing these issues.
 I made the bucket a bit wider and rounded the corners, ready to test Version 3.
 
-### Version 3
+## Version 3
 
 ![The third version of a 3D-printed bucket](/assets/projects/armrest-bucket/v3.jpg)
 
@@ -101,7 +101,7 @@ It didn't look pretty, but **it worked**!
 
 The bucket fit perfectly&mdash;prototyping was done.
 
-### The Final Armrest Bucket
+## The Final Armrest Bucket
 
 ![The final Polestar 3 Armrest Bucket](/assets/projects/armrest-bucket/final.jpg)
 
@@ -126,7 +126,7 @@ Even though I attached the raw `.f3d` model file, not everyone has Fusion 360 or
 ![The bucket from a top view](/assets/projects/armrest-bucket/top.jpg)
 ![The bucket in use with a few things inside](/assets/projects/armrest-bucket/in-use.jpg)
 
-### What I learned
+## What I learned
 
 Beyond learning how to model buckets, I taught myself the **iterative process** and the enjoyment of solving problems with fun solutions.
 

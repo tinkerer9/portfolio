@@ -1,4 +1,5 @@
 ---
+import '../styles/markdown.css';
 import BaseLayout from './BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Comments from '../components/Comments.astro';
@@ -48,57 +49,5 @@ const { frontmatter } = Astro.props;
 
     .content > img {
         margin-bottom: 1rem;
-    }
-
-    .markdown > :global(* + *) {
-        margin-top: 1rem;
-    }
-
-    .markdown :global(h1),
-    .markdown :global(h2),
-    .markdown :global(h3),
-    .markdown :global(h4),
-    .markdown :global(h5),
-    .markdown :global(h6) {
-        margin-block: 1.5rem;
-    }
-
-    .markdown :global(small) {
-        font-size: var(--text-xs);
-    }
-
-    .markdown :global(img),
-    .content > img {
-        border: 1px solid var(--gray-800);
-        border-radius: 1.5rem;
-        background: var(--gradient-subtle);
-        box-shadow: var(--shadow-sm);
-    }
-
-    .markdown :global(blockquote) {
-        padding-inline-start: 1.5rem;
-        border-inline-start: 0.25rem solid var(--accent-dark);
-        color: var(--gray-0);
-        font-family: var(--font-brand);
-        font-size: var(--text-lg);
-        font-weight: 600;
-        line-height: 1.1;
-    }
-
-    .markdown :global(a) {
-        text-decoration: 1px solid underline transparent;
-        text-underline-offset: 0.25em;
-        transition: text-decoration-color var(--theme-transition);
-    }
-
-    .markdown :global(a:hover),
-    .markdown :global(a:focus-visible) {
-        text-decoration-color: currentColor;
-    }
-
-    @media (min-width: 50em) {
-        .markdown :global(blockquote) {
-            font-size: var(--text-2xl);
-        }
     }
 </style>
