@@ -1,4 +1,4 @@
-import type { iconPaths } from './icons';
+import { type iconPaths } from './icons';
 
 type Social = {
     label: string;
@@ -7,6 +7,5 @@ type Social = {
 }
 
 export const socials: Social[] = [
-    { label: 'GitHub', href: "https://github.com/tinkerer9", icon: 'github-logo' },
-    // { label: 'Arduino', href: "https://forum.arduino.cc/u/makermax101", icon: 'arduino-logo' }
+    { label: 'GitHub', href: "https://github.com/tinkerer9", icon: 'github-logo' }
 ];
