@@ -1,19 +1,17 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 
-interface Props {
-    project: CollectionEntry<'projects'>;
-}
+type Project = CollectionEntry<'projects'>;
 
 export async function getStaticPaths() {
     const projects = await getCollection('projects');
 
-    return projects.map((project) => ({
+    return projects.map((project: Project) => ({
         params: { slug: project.id },
         props: { project }
     }));
 }
 
-export async function GET({ props, url }: { props: Props; url: URL }) {
+export async function GET({ props, url }: { props: { project: Project }; url: URL }) {
     const { project } = props;
 
     if (!project.body) {
@@ -26,13 +24,13 @@ export async function GET({ props, url }: { props: Props; url: URL }) {
         // use full path for links and images:
         .replace(
             /(!?)\[([^\]]*)\]\(([^)\s]+)([^)]*)\)/g,
-            (_, bang, text, href, rest) =>
+            (_: string, bang: string, text: string, href: string, rest: string) =>
                 `${bang}[${text}](${new URL(href, site).href}${rest})`
         )
         // remove comments:
         .replace(/^\s*<!--[\s\S]*?-->\s*\n?/gm, '')
         // shift headers:
-        .replace(/^(#{2,6})\s/gm, (_, hashes) => `${hashes.slice(1)} `)
+        .replace(/^(#{2,6})\s/gm, (_: string, hashes: string) => `${hashes.slice(1)} `)
         // keep newline spacing clean:
         .replace(/\n{3,}/g, '\n\n');
     

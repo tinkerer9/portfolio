@@ -1,4 +1,4 @@
-import { getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 type Page = {
     path: string;
@@ -6,7 +6,9 @@ type Page = {
     updated?: Date;
 };
 
-const staticPages = [
+type Project = CollectionEntry<'projects'>;
+
+const staticPages: Page[] = [
     { path: '/', title: 'Home' },
     { path: '/projects', title: 'Projects' },
     { path: '/about', title: 'About Me' },
@@ -19,11 +21,11 @@ const staticPages = [
 ];
 
 const projects = (await getCollection('projects'))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    .sort((a: Project, b: Project) => b.data.date.valueOf() - a.data.date.valueOf());
 
 export const pages: Page[] = [
     ...staticPages,
-    ...projects.map((project) => ({
+    ...projects.map((project: Project) => ({
         path: `/projects/${project.id}`,
         title: project.data.title,
         updated: project.data.updated

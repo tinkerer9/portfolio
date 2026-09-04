@@ -1,4 +1,6 @@
-import { getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+type Project = CollectionEntry<'projects'>;
 
 function escapeXml(text: string) {
     return text
@@ -13,11 +15,11 @@ export async function GET(context: { site: URL }) {
     const site = context.site.origin;
 
     const projects = (await getCollection("projects"))
-        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+        .sort((a: Project, b: Project) => b.data.date.valueOf() - a.data.date.valueOf());
 
     const lastBuildDate = projects.length
         ? projects.reduce(
-                (latest, project) =>
+                (latest: Date, project: Project) =>
                     project.data.updated > latest ? project.data.updated : latest,
                 projects[0].data.updated
             )
@@ -44,15 +46,14 @@ export async function GET(context: { site: URL }) {
     <lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>
     <ttl>60</ttl>
 ${projects
-    .map(
-        (project) => `\
+    .map((project: Project) => `\
     <item>
       <title>${escapeXml(project.data.title)}</title>
       <link>${escapeXml(`${site}/projects/${project.id}`)}</link>
       <guid isPermaLink="true">${escapeXml(`${site}/projects/${project.id}`)}</guid>
       <pubDate>${project.data.date.toUTCString()}</pubDate>
       <description>${escapeXml(project.data.description)}</description>
-${project.data.tags.map((tag) => `      <category>${escapeXml(tag)}</category>`).join("\n")}
+${project.data.tags.map((tag: string) => `      <category>${escapeXml(tag)}</category>`).join("\n")}
       <dc:creator>Max Parisi</dc:creator>
       <media:content url="${escapeXml(`${site}${project.data.image.path}`)}" medium="image">
         <media:title>${escapeXml(project.data.title)}</media:title>

@@ -8,10 +8,12 @@ import CallToAction from '../components/CallToAction.astro';
 import Skills from '../components/Skills.astro';
 import Grid from '../components/Grid.astro';
 import Project from '../components/Project.astro';
-import { getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+type Project = CollectionEntry<'projects'>
 
 const projects = (await getCollection('projects'))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .sort((a: Project, b: Project) => b.data.date.valueOf() - a.data.date.valueOf())
     .slice(0, 4);
 ---
 
@@ -68,7 +70,7 @@ const projects = (await getCollection('projects'))
                 <div class="gallery">
                     <Grid variant="offset">
                         {
-                            projects.map((project) => (
+                            projects.map((project: Project) => (
                                 <li>
                                     <Project project={project} />
                                 </li>
