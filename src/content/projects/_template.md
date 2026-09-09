@@ -11,6 +11,8 @@ image:
 tags:
   - One-Word
   - Keywords
+# noindex: false (default)
+# comments: true (default)
 ---
 
 <!-- markdownlint-disable MD001 -->
