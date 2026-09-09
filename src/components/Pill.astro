@@ -1,4 +1,22 @@
-<div class="pill"><slot /></div>
+---
+interface Props {
+    href?: string;
+    target?: string;
+    rel?: string;
+}
+
+const { href, target, rel } = Astro.props;
+---
+
+{href ? (
+    <a class="pill" href={href} target={target} rel={rel}>
+        <slot />
+    </a>
+) : (
+    <div class="pill">
+        <slot />
+    </div>
+)}
 
 <style>
     .pill {
@@ -13,6 +31,17 @@
         font-size: var(--text-md);
         line-height: 1.35;
         white-space: nowrap;
+    }
+
+    a.pill {
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
+
+    a.pill:hover,
+    a.pill:focus-visible {
+        text-decoration-color: currentColor;
     }
 
     @media print {

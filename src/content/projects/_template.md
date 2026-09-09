@@ -7,10 +7,10 @@ date: YYYY-MM-DD
 updated: YYYY-MM-DD
 image:
   path: /assets/projects/myproject/image.jpg
-  alt: A description for the hero image
-tags:
-  - One-Word
-  - Keywords
+  alt: A description for the hero image # optional
+link: # optional
+  href: https://example.com
+  label: External Link
 # noindex: false (default)
 # comments: true (default)
 ---

@@ -3,14 +3,10 @@ title: Eclipse Photography
 description: >-
   Holding a phone to eclipse glasses didn't cut it, so I went up to my roof with a professional camera to do it right.
 date: 2024-04-08
-updated: 2026-08-24
+updated: 2026-09-09
 image:
   path: /assets/projects/eclipse-photography/photo.jpg
   alt: A picture of a partial solar eclipse.
-tags:
-  - Photography
-  - Eclipse
-  - Creative
 ---
 
 <!-- markdownlint-disable MD001 -->

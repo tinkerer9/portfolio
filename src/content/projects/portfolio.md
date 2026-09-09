@@ -4,14 +4,10 @@ description: >-
   I was jealous of all the other Max Parisi's on Google.
   So I made a website to show that I exist, too.
 date: 2026-07-04
-updated: 2026-09-07
+updated: 2026-09-09
 image:
   path: /assets/projects/portfolio/homepage.jpg
   alt: A screenshot of maxparisi.me, my portfolio
-tags:
-  - Web Development
-  - Astro
-  - Website
 ---
 
 <!-- markdownlint-disable MD001 -->

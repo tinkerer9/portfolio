@@ -32,14 +32,13 @@ const { Content } = await render(project);
                 <a class="back-link" href="/projects"><Icon icon="arrow-left" /> Projects</a>
                 <Hero title={project.data.title} align="start">
                     <div class="details">
-                        <div class="tags">
-                            {
-                                project.data.tags.map((tag: string) => (
-                                    <Pill>{tag}</Pill>
-                                ))
-                            }
-                        </div>
                         <p class="description">{project.data.description}</p>
+                        { project.data.link && (
+                            <Pill href={project.data.link?.href} target="_blank" rel="noopener noreferrer">
+                                {project.data.link?.label}
+                                <Icon icon="arrow-up-right" />
+                            </Pill>
+                        )}
                     </div>
                 </Hero>
             </div>
@@ -81,13 +80,8 @@ const { Content } = await render(project);
         padding: 0.5rem;
     }
 
-    .tags {
-        display: flex;
-        gap: 0.5rem;
-    }
-
     .description {
-        max-width: 54ch;
+        /* max-width: 54ch; */
         font-size: var(--text-lg);
         text-wrap: balance;
     }

@@ -3,14 +3,13 @@ title: Polestar Armrest Bucket
 description: >-
   My dad's Polestar 3 center console was too deep, so I designed and 3D-printed a bucket that fit in perfectly.
 date: 2025-03-19
-updated: 2026-08-24
+updated: 2026-09-09
 image:
   path: /assets/projects/armrest-bucket/colored.jpg
   alt: An armrest bucket for a Polestar 3 in colored light
-tags:
-  - 3D Design
-  - 3D Printing
-  - Solving
+link:
+  href: https://makerworld.com/en/models/1228829-customizable-polestar-3-armrest-bucket#profileId-1247182
+  label: Model on MakerWorld
 ---
 
 <!-- markdownlint-disable MD001 -->

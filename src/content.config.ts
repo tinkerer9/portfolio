@@ -13,11 +13,14 @@ export const collections = {
             description: z.string(),
             date: z.coerce.date(),
             updated: z.coerce.date(),
-            tags: z.array(z.string()),
             image: z.object({
                 path: z.string(),
                 alt: z.string().optional()
             }),
+            link: z.object({
+                href: z.string(),
+                label: z.string()
+            }).optional(),
             noindex: z.boolean().default(false),
             comments: z.boolean().default(true)
         })
