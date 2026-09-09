@@ -53,7 +53,6 @@ ${projects
       <guid isPermaLink="true">${escapeXml(`${site}/projects/${project.id}`)}</guid>
       <pubDate>${project.data.date.toUTCString()}</pubDate>
       <description>${escapeXml(project.data.description)}</description>
-${project.data.tags.map((tag: string) => `      <category>${escapeXml(tag)}</category>`).join("\n")}
       <dc:creator>Max Parisi</dc:creator>
       <media:content url="${escapeXml(`${site}${project.data.image.path}`)}" medium="image">
         <media:title>${escapeXml(project.data.title)}</media:title>
