@@ -27,6 +27,14 @@ The 24-70mm lens is able to zoom out to **24mm**, which is equal to a **1x zoom*
 In videography, good audio is more important than good video.
 I own various microphones for my camera.
 
+## Stabilizer
+
+![The DJI RS 3 Mini with a camera mounted](/assets/gear/camera/rs-3-mini.jpg)
+
+Shaky hands can lead to almost unusable video.
+To combat this, I got a the [DJI RS 3 Mini](https://www.dji.com/rs-3-mini), a stabilizer/gimbal for my camera.
+It makes a shaky hand undetectable bu using motors and arms to move the camera in the opposite direction.
+
 ### Lavalier
 
 ![The DJI Mic 3 in its charging case](/assets/gear/camera/mic3.jpg)
@@ -45,7 +53,7 @@ It typically sits on top of the camera, aimed at the speaker to capture audio wi
 
 ## Accessories
 
-Aside from microphones, I own a few other accessories for my camera.
+I also own a few other accessories for my camera:
 
 - [RGB lights](https://www.amazon.com/dp/B08MDQ3CJY)
 - [Remote trigger](https://www.amazon.com/dp/B071D9Y331)

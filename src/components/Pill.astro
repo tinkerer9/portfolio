@@ -8,7 +8,7 @@ interface Props {
 const { href, target, rel } = Astro.props;
 ---
 
-{href ? (
+{ href ? (
     <a class="pill" href={href} target={target} rel={rel}>
         <slot />
     </a>
