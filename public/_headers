@@ -17,7 +17,7 @@
   Cache-Control: public, max-age=604800
 /web-app-manifest-512x512.png
   Cache-Control: public, max-age=604800
-/site.webmanifest
+/manifest.json
   Cache-Control: public, max-age=604800
 
 # SEO files (60 minutes)
