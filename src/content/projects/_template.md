@@ -15,8 +15,6 @@ link: # optional
 # comments: true (default)
 ---
 
-<!-- markdownlint-disable MD001 -->
-
 > Hook in readers with a catchy blockquote.
 > Can be a quote, date, or joke.
 

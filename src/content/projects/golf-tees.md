@@ -10,8 +10,6 @@ image:
   alt: A 3D printer printing blue flat golf tees
 ---
 
-<!-- markdownlint-disable MD001 -->
-
 > Hi Max.
 > Can you make me some Flat Tees with your 3D printer?
 

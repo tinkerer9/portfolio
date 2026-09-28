@@ -9,8 +9,6 @@ image:
   alt: A picture of a partial solar eclipse.
 ---
 
-<!-- markdownlint-disable MD001 -->
-
 > October 14, 2023 was the day I saw my first solar eclipse.
 
 My sixth-grade science teacher had told me and my classmates about a **partial solar eclipse** that would happen the following week.

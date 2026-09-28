@@ -10,8 +10,6 @@ image:
   alt: A screenshot of maxparisi.me, my portfolio
 ---
 
-<!-- markdownlint-disable MD001 -->
-
 > July 3, 2026.
 
 That's when I purchased the domain **maxparisi.me**.

@@ -13,8 +13,6 @@ link:
   label: PCB on GitHub
 ---
 
-<!-- markdownlint-disable MD001 -->
-
 > Computers are complicated.
 > So I made one from scratch.
 
