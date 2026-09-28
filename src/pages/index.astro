@@ -14,7 +14,8 @@ type Project = CollectionEntry<'projects'>
 
 const projects = (await getCollection('projects'))
     .sort((a: Project, b: Project) => b.data.date.valueOf() - a.data.date.valueOf())
-    .slice(0, 4);
+const shownProjects = projects.slice(0, 4);
+const projectsHidden = projects.length - shownProjects.length;
 ---
 
 <BaseLayout 
@@ -70,12 +71,17 @@ const projects = (await getCollection('projects'))
                 <div class="gallery">
                     <Grid variant="offset">
                         {
-                            projects.map((project: Project) => (
+                            shownProjects.map((project: Project) => (
                                 <li>
                                     <Project project={project} />
                                 </li>
                             ))
                         }
+                        { projectsHidden > 0 && (
+                            <MoreLink href="/projects">
+                                {projectsHidden} more {projectsHidden === 1 ? "project" : "projects"}
+                            </MoreLink>
+                        ) }
                     </Grid>
                 </div>
 

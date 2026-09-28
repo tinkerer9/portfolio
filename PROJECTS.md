@@ -12,3 +12,4 @@
 - DIY photobooth
 - CollaboKeys
 - Email Workers
+- IoT & Home Assistant
