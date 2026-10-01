@@ -41,6 +41,8 @@ Turns out, the red light was just broken!
 Luckily, the 3-pack I bought also had an orange light, which I swapped in.
 Looking back, I actually think the orange light was better.
 
+![The front of an emergency stop button module](/assets/projects/stop-button/front.jpg)
+
 ## Reflection
 
 This project taught me a lot&mdash;such as how to wire together a simple high-voltage circuit and testing parts beforehand.
